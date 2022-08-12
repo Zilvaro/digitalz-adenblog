@@ -26,7 +26,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><img src="https://ams02pap001files.storage.live.com/y4mnGuFB-EGEIPbJ83_0Wu3UJz3xO1-6aftPBnMpsKnbN2LyI9JZyHGhGmtdpnRMWD4AwtgAjYz_t_REvnQY3SwsxDPc0kgIqcM0bDAm1ybNjzDeg5uZv_VIwUUBTtnTc_rqw6uMK-nmgyWO-i_uKWr3gBLayFnp9aW_OBYvQtUgpkwRjug1kAcKFuMjBagZdtB?encodeFailures=1&width=1920&height=640" width="100vw"></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="https://res.cloudinary.com/zilvacloud/image/upload/v1660216640/aden-logo-no-background_yapu1c.png" width="100vw"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,6 +35,9 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./content_top.html">Content</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
