@@ -16,13 +16,19 @@
                                 <img class="card-img-top"
                                     src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                
+                                <a href="{% url 'content-view' post.slug %}">
+                                    <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                </a>
+
                                 {% endif %}
                             </div>
-                            <a href="{% url 'post_detail' post.slug  %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
+                            <h2 class="card-title">{{ post.title }}</h2>
+                            <p class="card-text">{{ post.excerpt }}</p>
+                            
+                            
+                                
+                            
                             <hr />
                             <p class="card-text text-muted h6">{{ post.created_on}} </p>
                         </div>
@@ -49,5 +55,6 @@
         </ul>
     </nav>
     {% endif %}
+
 </div>
 {%endblock%}
