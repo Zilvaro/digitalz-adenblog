@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.http import HttpResponseRedirect
 from .models import Content
 
 
@@ -10,4 +9,3 @@ def content(request):
 class ContentList(generic.ListView):
     model = Content
     template_name = 'content.html'
-    
