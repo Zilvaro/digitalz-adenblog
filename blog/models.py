@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -30,6 +31,9 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+    def get_absolute_url(self):
+        return reverse('home', args=(str(self.slug)))
+
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
@@ -45,3 +49,5 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+

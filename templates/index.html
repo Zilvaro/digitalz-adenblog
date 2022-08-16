@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
+
 {% block content %}
-
-
 
 <div class="container-fluid">
     <div class="row">
@@ -23,7 +22,7 @@
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
@@ -41,6 +40,11 @@
             </div>
         </div>
     </div>
+
+    <div class="col-md-8 card mb-4  mt-3 ">
+        <a class="nav-link" aria-current="page" href="{% url 'add_post' %}"><h4 class="btn btn-secondary">Add Post</h4></a>
+    </div>
+
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
