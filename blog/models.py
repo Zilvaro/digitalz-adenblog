@@ -32,7 +32,7 @@ class Post(models.Model):
         return self.likes.count()
 
     def get_absolute_url(self):
-        return reverse('home', args=(str(self.slug)))
+        return reverse('home',)
 
 
 class Comment(models.Model):
