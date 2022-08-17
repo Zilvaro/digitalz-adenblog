@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, HeroContent
 from .forms import CommentForm, AddPostForm
 
 
@@ -10,7 +10,7 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
-
+    
 
 class PostDetail(View):
 
@@ -82,3 +82,10 @@ class AddPostView(generic.CreateView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'add_post.html'
     fields = ('title', 'slug', 'author', 'featured_image', 'content', 'status')
+
+
+class HeroContent(generic.ListView):
+    model = HeroContent()
+    queryset = HeroContent.objects.filter(status=1).order_by('created_on')
+    template_name = 'index.html'
+    paginate_by = 6

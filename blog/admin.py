@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, HeroContent
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -23,3 +23,11 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
         
+@admin.register(HeroContent)
+class HeroContent(SummernoteModelAdmin):
+
+    list_display = ('hero_title', 'slug', 'status', 'created_on')
+    search_fields = ['hero_title', 'hero_content']
+    list_filter = ('status', 'created_on')
+    prepopulated_fields = {'slug': ('hero_title',)}
+    summernote_fields = ('hero_content',)
