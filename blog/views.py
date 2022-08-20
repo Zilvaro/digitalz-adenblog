@@ -82,10 +82,3 @@ class AddPostView(generic.CreateView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'add_post.html'
     fields = ('title', 'slug', 'author', 'featured_image', 'content', 'status')
-
-
-class HeroContent(generic.ListView):
-    model = HeroContent()
-    queryset = HeroContent.objects.filter(status=1).order_by('created_on')
-    template_name = 'index.html'
-    paginate_by = 6
