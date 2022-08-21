@@ -1,16 +1,26 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic, View
+from django.views import generic, View 
 from django.http import HttpResponseRedirect
 from .models import Post, HeroContent
 from .forms import CommentForm, AddPostForm
 
 
-class PostList(generic.ListView):
-    model = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+class PostList(generic.TemplateView):
     template_name = 'index.html'
-    paginate_by = 6
     
+    def get_context_data(self, *args, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(*args, **kwargs)
+        # Add in a QuerySet of all the books
+        context['blog_content'] = Post.objects.all()
+        context['hero_content'] = HeroContent.objects.all()
+        return context
+        
+
+
+
+
+
 
 class PostDetail(View):
 

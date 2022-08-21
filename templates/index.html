@@ -3,19 +3,57 @@
 {% block content %}
 
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for post in hero_content %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in post.hero_featured_image.url %}
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg">
+                                {% else %}
+                                <img class="card-img-top" src="{{ post.hero_featured_image.url }}">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p class="author">Author: {{ post.hero_author }}</p>
+                                </div>
+                            </div>
+                            <a href="{% url 'post_detail' post.hero_slug %}" class="post-link">
+                                <h2 class="card-title">{{ post.hero_title }}</h2>
+                                <p class="card-text">{{ post.hero_excerpt }}</p>
+                            </a>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+</div>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for post in post_list %}
+                {% for post in blog_content %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}
@@ -43,7 +81,9 @@
     </div>
 
     <div class="col-md-8 card mb-4  mt-3 ">
-        <a class="nav-link" aria-current="page" href="{% url 'add_post' %}"><h4 class="btn btn-secondary">Add Post</h4></a>
+        <a class="nav-link" aria-current="page" href="{% url 'add_post' %}">
+            <h4 class="btn btn-secondary">Add Post</h4>
+        </a>
     </div>
 
     {% if is_paginated %}
