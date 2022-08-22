@@ -59,11 +59,13 @@ class HeroContent(models.Model):
         User, on_delete=models.CASCADE, related_name="hero_content_posts"
     )
     hero_featured_image = CloudinaryField('image', default='placeholder')
+    image_alt_text = models.CharField(max_length=200, blank=True, default='aden wellness theme image')
+    hero_header = models.CharField(max_length=200, blank=True)
     hero_excerpt = models.TextField(blank=True)
     images_on_page = models.IntegerField(choices=IMAGECOUNT, default=1)
     image_height = models.IntegerField(choices=IMAGEHEIGHT, default=270)
     updated_on = models.DateTimeField(auto_now=True)
-    hero_content = models.TextField( blank=True)
+    hero_content = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     

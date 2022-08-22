@@ -38,9 +38,71 @@
             </div>
         </div>
     </div>
-
-
 </div>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for post in hero_content %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+
+
+                        <div class="card-body">
+                            <a href="{% url 'post_detail' post.hero_slug %}" class="post-link">
+                                <div class="image-container">
+                                    {% if "placeholder" in post.hero_featured_image.url %}
+                                    <img class="card-img-top"
+                                        src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg" alt="relaxing image">
+                                    {% else %}
+                                    <img class="card-img-top" src="{{ post.hero_featured_image.url }}" alt="relaxing image">
+                                    {% endif %}
+                                </div>
+                                <div>                            
+                                    <h2 class="card-title">{{ post.hero_title }}</h2>
+                                    <p class="card-text">{{ post.hero_excerpt | safe }}</p>  
+                                    <h1 class="card-title">{{ post.hero_header | safe }}</h1>          
+                                </div>
+                                <hr />
+                            </a>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card bg-dark text-white">
+    <img src="..." class="card-img" alt="...">
+    <div class="card-img-overlay">
+      <h5 class="card-title">{{ post.hero_title }}</h5>
+      <p class="card-text">{{ post.hero_excerpt }}</p>
+    </div>
+</div>
+
+
+
+
+
+
+
 
 <div class="container-fluid">
     <div class="row">
