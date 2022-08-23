@@ -5,8 +5,10 @@ from django.urls import reverse
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
-IMAGECOUNT = ((1, "Whole Page"), (2, "2xPage"))
+IMAGECOUNTMOBILE = ((12, "Whole Page"), (6, "2xPage"))
+IMAGECOUNTDESKTOP = ((12, "Whole Page"), (6, "2xPage"), (4, "3xPage"), (3, "4xPage"))
 IMAGEHEIGHT = ((320, "320px"), (270, "270px"), (160, "160px"), (88, "88px"))
+IMAGEPLACE = ((1, "Image-on-top"), (2, "Image-on-side"), (3, "Image-as-background"))
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -62,8 +64,10 @@ class HeroContent(models.Model):
     image_alt_text = models.CharField(max_length=200, blank=True, default='aden wellness theme image')
     hero_header = models.CharField(max_length=200, blank=True)
     hero_excerpt = models.TextField(blank=True)
-    images_on_page = models.IntegerField(choices=IMAGECOUNT, default=1)
+    images_on_mobile_page = models.IntegerField(choices=IMAGECOUNTMOBILE, default=12)
+    images_on_desktop = models.IntegerField(choices=IMAGECOUNTDESKTOP, default=6)
     image_height = models.IntegerField(choices=IMAGEHEIGHT, default=270)
+    image_place = models.IntegerField(choices=IMAGEPLACE, default=3)
     updated_on = models.DateTimeField(auto_now=True)
     hero_content = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -74,3 +78,20 @@ class HeroContent(models.Model):
 
     def __str__(self):
         return self.hero_title
+
+
+class ContactMessage(models.Model):
+    first_name = models.CharField(max_length=80)
+    last_name = models.CharField(max_length=80)
+    email = models.EmailField()
+    contact_message = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return self.email
+
+    def get_absolute_url(self):
+        return reverse('home',)

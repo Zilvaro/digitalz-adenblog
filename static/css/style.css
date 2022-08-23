@@ -140,3 +140,13 @@ body {
     background: transparent;
     border: none;
 }
+
+.content-background {
+    background-image: url(https://res.cloudinary.com/zilvacloud/image/upload/v1661247073/mountain-vertical-photo_roztmt.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    width: 100%;
+    
+
+}

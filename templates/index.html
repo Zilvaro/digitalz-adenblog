@@ -10,72 +10,69 @@
                 {% for post in hero_content %}
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in post.hero_featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg">
-                                {% else %}
-                                <img class="card-img-top" src="{{ post.hero_featured_image.url }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.hero_author }}</p>
-                                </div>
+
+                        {% if post.image_place == 1 %}
+                            <div class="card-body">
+                                <a href="{% url 'home' %}" class="post-link">
+                                    <div class="image-container">
+                                        {% if "placeholder" in post.hero_featured_image.url %}
+                                        <img class="card-img-top"
+                                            src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"
+                                            alt="relaxing image">
+                                        {% else %}
+                                        <img class="card-img-top" src="{{ post.hero_featured_image.url }}"
+                                            alt="{{ post.image_alt_text }}">
+                                        {% endif %}
+                                    </div>
+                                    <div>
+                                        <h2 class="card-title">{{ post.hero_title }}</h2>
+                                        <p class="card-text">{{ post.hero_excerpt | safe }}</p>
+                                        <h1 class="card-title">{{ post.hero_header | safe }}</h1>
+                                    </div>
+                                    <hr />
+                                </a>
                             </div>
-                            <a href="{% url 'post_detail' post.hero_slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.hero_title }}</h2>
-                                <p class="card-text">{{ post.hero_excerpt }}</p>
-                            </a>
-                            <hr />
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in hero_content %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-
-
-                        <div class="card-body">
-                            <a href="{% url 'post_detail' post.hero_slug %}" class="post-link">
-                                <div class="image-container">
+                        {% elif post.image_place == 3 %}
+                            <div class="card bg-dark text-white">
+                                <a href="{% url 'home' %}" class="post-link">
                                     {% if "placeholder" in post.hero_featured_image.url %}
-                                    <img class="card-img-top"
-                                        src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg" alt="relaxing image">
+                                    <img class="card-img"
+                                        src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"
+                                        alt="relaxing image">
                                     {% else %}
-                                    <img class="card-img-top" src="{{ post.hero_featured_image.url }}" alt="relaxing image">
+                                    <img class="card-img" src="{{ post.hero_featured_image.url }}"
+                                        alt="{{ post.image_alt_text }}">
                                     {% endif %}
-                                </div>
-                                <div>                            
-                                    <h2 class="card-title">{{ post.hero_title }}</h2>
-                                    <p class="card-text">{{ post.hero_excerpt | safe }}</p>  
-                                    <h1 class="card-title">{{ post.hero_header | safe }}</h1>          
-                                </div>
-                                <hr />
-                            </a>
-                        </div>
-
-
-
-
-
-
-
+                                    <div class="card-img-overlay">
+                                        <h1 class="card-title display-1">{{ post.hero_header | safe }}</h1>
+                                        <p class="card-text">{{ post.hero_excerpt | safe }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        {% else %}
+                            <div class="card mb-3">
+                                <a href="{% url 'home' %}" class="post-link">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            {% if "placeholder" in post.hero_featured_image.url %}
+                                            <img class="card-img-top"
+                                                src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"
+                                                alt="relaxing image">
+                                            {% else %}
+                                            <img class="card-img-top" src="{{ post.hero_featured_image.url }}"
+                                                alt="{{ post.image_alt_text }}">
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body">
+                                                <h1 class="card-title">{{ post.hero_header | safe }}</h1>
+                                                <p class="card-text">{{ post.hero_excerpt | safe }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
@@ -89,13 +86,7 @@
 </div>
 
 
-<div class="card bg-dark text-white">
-    <img src="..." class="card-img" alt="...">
-    <div class="card-img-overlay">
-      <h5 class="card-title">{{ post.hero_title }}</h5>
-      <p class="card-text">{{ post.hero_excerpt }}</p>
-    </div>
-</div>
+
 
 
 
@@ -145,6 +136,12 @@
     <div class="col-md-8 card mb-4  mt-3 ">
         <a class="nav-link" aria-current="page" href="{% url 'add_post' %}">
             <h4 class="btn btn-secondary">Add Post</h4>
+        </a>
+    </div>
+
+    <div class="col-md-8 card mb-4  mt-3 ">
+        <a class="nav-link" aria-current="page" href="{% url 'contact_form' %}">
+            <h4 class="btn btn-primary">Contact us</h4>
         </a>
     </div>
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, HeroContent
+from .models import Post, Comment, HeroContent, ContactMessage
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -31,3 +31,12 @@ class HeroContentAdmin(SummernoteModelAdmin):
     list_filter = ('status', 'created_on')
     prepopulated_fields = {'hero_slug': ('hero_title',)}
     summernote_fields = ('hero_content', 'hero_header', 'hero_excerpt',)
+
+
+@admin.register(ContactMessage)
+class ContactsAdmin(SummernoteModelAdmin):
+
+    list_display = ('first_name', 'last_name', 'email', 'contact_message')
+    search_fields = ['first_name', 'last_name', 'email']
+    
+    
