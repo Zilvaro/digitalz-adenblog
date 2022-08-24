@@ -7,7 +7,7 @@ from django.urls import reverse
 STATUS = ((0, "Draft"), (1, "Published"))
 IMAGECOUNTMOBILE = ((12, "Whole Page"), (6, "2xPage"))
 IMAGECOUNTDESKTOP = ((12, "Whole Page"), (6, "2xPage"), (4, "3xPage"), (3, "4xPage"))
-IMAGEHEIGHT = ((320, "320px"), (270, "270px"), (160, "160px"), (88, "88px"))
+IMAGEHEIGHT = ((32, "320px"), (27, "270px"), (16, "160px"), (8, "88px"))
 IMAGEPLACE = ((1, "Image-on-top"), (2, "Image-on-side"), (3, "Image-as-background"))
 
 class Post(models.Model):
@@ -66,7 +66,7 @@ class HeroContent(models.Model):
     hero_excerpt = models.TextField(blank=True)
     images_on_mobile_page = models.IntegerField(choices=IMAGECOUNTMOBILE, default=12)
     images_on_desktop = models.IntegerField(choices=IMAGECOUNTDESKTOP, default=6)
-    image_height = models.IntegerField(choices=IMAGEHEIGHT, default=270)
+    image_height = models.IntegerField(choices=IMAGEHEIGHT, default=27)
     image_place = models.IntegerField(choices=IMAGEPLACE, default=3)
     updated_on = models.DateTimeField(auto_now=True)
     hero_content = models.TextField(blank=True)

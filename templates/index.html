@@ -8,12 +8,12 @@
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in hero_content %}
-                <div class="col-md-4">
+                <div class="col-md-{{ post.images_on_desktop }}">
                     <div class="card mb-4">
 
                         {% if post.image_place == 1 %}
                             <div class="card-body">
-                                <a href="{% url 'home' %}" class="post-link">
+                                <a href="{% url 'herocontent' %}" class="post-link">
                                     <div class="image-container">
                                         {% if "placeholder" in post.hero_featured_image.url %}
                                         <img class="card-img-top"
@@ -33,14 +33,15 @@
                                 </a>
                             </div>
                         {% elif post.image_place == 3 %}
-                            <div class="card bg-dark text-white">
-                                <a href="{% url 'home' %}" class="post-link">
+                            <div class="card bg-dark text-white he">
+                                <a href="{% url 'herocontent' %}" class="post-link">
                                     {% if "placeholder" in post.hero_featured_image.url %}
-                                    <img class="card-img"
+                                    <img class="card-img hero-image" style="height:{{ post.image_height }}rem;"
                                         src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"
                                         alt="relaxing image">
                                     {% else %}
-                                    <img class="card-img" src="{{ post.hero_featured_image.url }}"
+                                    <img class="card-img hero-image" 
+                                        src="{{ post.hero_featured_image.url }}" style="height:{{ post.image_height }}rem;"
                                         alt="{{ post.image_alt_text }}">
                                     {% endif %}
                                     <div class="card-img-overlay">
@@ -51,7 +52,7 @@
                             </div>
                         {% else %}
                             <div class="card mb-3">
-                                <a href="{% url 'home' %}" class="post-link">
+                                <a href="{% url 'herocontent' %}" class="post-link">
                                     <div class="row">
                                         <div class="col-4">
                                             {% if "placeholder" in post.hero_featured_image.url %}

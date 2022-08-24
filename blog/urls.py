@@ -8,4 +8,5 @@ urlpatterns = [
     path('add_post/>', views.AddPostView.as_view(), name="add_post"),
     path('contact', views.contact, name="contact_form"),
     path('message/>', views.ContactView.as_view(), name='contact_form'),
+    path('interest', views.heroview, name="herocontent"),
   ]

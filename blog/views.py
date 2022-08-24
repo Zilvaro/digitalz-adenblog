@@ -104,3 +104,7 @@ class ContactView(generic.CreateView):
     model = ContactMessage
     template_name = 'contact_form.html'
     fields = ('first_name', 'last_name', 'email', 'contact_message')
+
+
+def heroview(request):
+   return render(request, 'hero_detail.html')
