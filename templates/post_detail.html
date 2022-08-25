@@ -59,6 +59,8 @@
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
+                    <a class="nav-link" aria-current="page" href="{% url 'update_post' post.slug %}">
+                        <h4 class="btn btn-secondary">Update Post</h4></a>
                 </div>
             </div>
         </div>

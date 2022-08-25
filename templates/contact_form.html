@@ -15,13 +15,16 @@
         </div>
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ contact_form | crispy }}
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <br>
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
+                <table>
+                    <form method="post" style="margin-top: 1.3em;">
+                        {{ contact_form | crispy }}
+                        {% csrf_token %}
+                        {{ form.as_table }}
+                    </form>
+                </table>    
+                <br>
+                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                <hr>
             </div>
         </div>
     </div>    

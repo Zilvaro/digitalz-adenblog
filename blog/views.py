@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View 
 from django.http import HttpResponseRedirect
-from .models import Post, HeroContent, ContactMessage
+from .models import Post, HeroContent, ContactMessage 
 from .forms import CommentForm, AddPostForm, ContactForm
 
 
@@ -87,6 +87,13 @@ class AddPostView(generic.CreateView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'add_post.html'
     fields = ('title', 'slug', 'author', 'featured_image', 'content', 'status')
+
+
+class UpdatePostView(generic.UpdateView):
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'update_post.html'
+    fields = ('title', 'slug', 'featured_image', 'content', 'status')
 
 
 def contact(request):

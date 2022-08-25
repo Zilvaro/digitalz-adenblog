@@ -121,7 +121,10 @@
                             </a>
                             <hr />
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
+                                {{ post.number_of_likes }} <a class="nav-link" aria-current="page" href="{% url 'update_post' post.slug %}">
+                                    <h4 class="btn btn-secondary">Update Post</h4>
+                                </a></p>
+
                         </div>
                     </div>
                 </div>

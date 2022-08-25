@@ -8,20 +8,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Add Post..." %}</h3>
+            <h3>{% trans "Update Post..." %}</h3>
             <hr>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <table>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ ad_post_form | crispy }}
+                <form method="POST" style="margin-top: 1.3em;">
+                    {{ add_post_form | crispy }}
                     {% csrf_token %}
-                    {{ form.as_table }}                    
-            </table>
+                    {{ form.as_table }}
                     <br>
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>                        
+            </table>
+                    <br>        
+                    <button type="submit" class="btn btn-signup btn-lg">Update</button>                           
                 </form>                
             
             <br>
