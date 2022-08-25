@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View 
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 from .models import Post, HeroContent, ContactMessage 
 from .forms import CommentForm, AddPostForm, ContactForm
 
@@ -91,9 +92,14 @@ class AddPostView(generic.CreateView):
 
 class UpdatePostView(generic.UpdateView):
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'update_post.html'
     fields = ('title', 'slug', 'featured_image', 'content', 'status')
+
+
+class DeletePostView(generic.DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('home')
 
 
 def contact(request):
