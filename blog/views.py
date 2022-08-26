@@ -87,7 +87,7 @@ class AddPostView(generic.CreateView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'add_post.html'
-    fields = ('title', 'slug', 'featured_image', 'content', 'status')
+    fields = ('title', 'slug', 'author', 'featured_image', 'content', 'status')
 
 
 class UpdatePostView(generic.UpdateView):
