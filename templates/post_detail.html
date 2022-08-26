@@ -59,8 +59,10 @@
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
+                    {% if user.is_authenticated and user == post.author %}
                     <a class="nav-link" aria-current="page" href="{% url 'update_post' post.slug %}">
                         <h4 class="btn btn-outline-secondary btn-sm">Update Post</h4></a>
+                    {% endif %}
                     <a class="nav-link" aria-current="page" href="{% url 'home' %}">
                             <h4 class="btn btn-secondary">Back to Posts</h4></a>
                 </div>

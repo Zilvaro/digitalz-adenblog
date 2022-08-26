@@ -4,7 +4,7 @@
 
 {% block content %}
 
-
+{% if user.is_authenticated and user == post.author %}
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2"><br/>
@@ -30,5 +30,16 @@
     </div>
 </div>
 
+{% else %}
+
+<div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+        <h3>{% trans "This page is ONLY for registered users...& if you are the author of this post" %}</h3>
+        <hr>
+        <a href="{% url 'account_login' %}"><button class="btn btn-signup right">{% trans 'Sign-in' %}</button></a>
+    </div>
+</div>
+
+{% endif %}
 
 {% endblock %}
