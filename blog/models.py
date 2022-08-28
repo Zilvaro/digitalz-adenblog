@@ -19,7 +19,7 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
+    content = models.TextField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
@@ -56,7 +56,7 @@ class Comment(models.Model):
 
 class HeroContent(models.Model):
     hero_title = models.CharField(max_length=200, unique=True)
-    hero_slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="hero_content_posts"
     )
@@ -78,6 +78,9 @@ class HeroContent(models.Model):
 
     def __str__(self):
         return self.hero_title
+
+    def get_absolute_url(self):
+        return reverse('home',)
 
 
 class ContactMessage(models.Model):

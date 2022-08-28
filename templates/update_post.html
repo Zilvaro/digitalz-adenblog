@@ -17,7 +17,7 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <table>
                 <form method="POST" style="margin-top: 1.3em;">
-                    {{ add_post_form | crispy }}
+                    {{ add_post_form | safe }}
                     {% csrf_token %}
                     {{ form.as_table }}
                     <br>
