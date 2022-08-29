@@ -10,9 +10,7 @@ class PostList(generic.TemplateView):
     template_name = 'index.html'
     
     def get_context_data(self, *args, **kwargs):
-        # Call the base implementation first to get a context
         context = super().get_context_data(*args, **kwargs)
-        # Add in a QuerySet of all the books
         context['blog_content'] = Post.objects.all()
         context['hero_content'] = HeroContent.objects.all()
         return context
@@ -119,20 +117,20 @@ class ContactView(generic.CreateView):
     fields = ('first_name', 'last_name', 'email', 'contact_message')
 
 
-def heroview(request):
-   return render(request, 'hero_detail.html')
+#def heroview(request):
+#   return render(request, 'hero_detail.html')
 
 
-class HeroContentDetail(View):
-   
-   def get(self, request, slug, *args, **kwargs):
+class HeroContentDetail(generic.DetailView):
+
+    def get(self, request, hero_slug, *args, **kwargs):
         queryset = HeroContent.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-
+        post = get_object_or_404(queryset, hero_slug=hero_slug)
+        
         return render(
             request,
             "hero_detail.html",
             {
-                "post": post
-            },
+               "post": post,
+           },
         )
