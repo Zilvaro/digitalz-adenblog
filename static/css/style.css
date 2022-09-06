@@ -153,3 +153,7 @@ body {
     width: 100%;
     object-fit: cover;    
 }
+
+#id_contact_message {
+    width: 50vw;
+}

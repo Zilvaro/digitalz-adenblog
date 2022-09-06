@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from .models import Post, HeroContent, ContactMessage 
-from .forms import CommentForm, AddPostForm, ContactForm
+from .forms import CommentForm, AddPostForm, ContactForm, AddContentForm
 
 
 class PostList(generic.TemplateView):
@@ -134,3 +134,12 @@ class HeroContentDetail(generic.DetailView):
                "post": post,
            },
         )
+
+
+class AddContentView(generic.CreateView):
+    model = HeroContent
+    queryset = HeroContent.objects.filter(status=1).order_by('-created_on')
+    template_name = 'add_content.html'
+    fields = ('hero_title', 'hero_slug', 'author', 'hero_featured_image',
+              'image_alt_text', 'hero_header', 'hero_card',
+              'images_on_desktop', 'hero_content', 'status')

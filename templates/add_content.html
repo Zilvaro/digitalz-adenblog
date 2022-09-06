@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Add Post..." %}</h3>
+            <h3>{% trans "Add Content..." %}</h3>
             <hr>
         </div>
     </div>
@@ -17,7 +17,7 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <form method="POST" enctype="multipart/form-data" style="margin-top: 1.3em;">
                 <table>
-                    {{ add_post_form | crispy }}
+                    {{ add_content_form | crispy }}
                     {% csrf_token %}
                     {{ form.media }}
                     {{ form.as_table }}
