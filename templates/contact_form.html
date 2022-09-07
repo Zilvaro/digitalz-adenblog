@@ -4,62 +4,35 @@
 
 {% block content %}
 
+<div class="contact-background">
+  
 
-<div class="container">
-    <div class="contact-background">
-        <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2 ">
-                <h3>{% trans "Get in touch..." %}</h3>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2">
-                <form method="post" style="margin-top: 1.3em;">
-                    <table>
-                        {{ contact_form | crispy }}
-                        {% csrf_token %}
-                        {{ form.as_table }}
-                    </table>
-                    <br>
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                    <hr>
-                </form>
-                
-            </div>
-        </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mt-3 offset-md-2 ">
+        <h3>{% trans "Get in touch..." %}</h3>
+        <hr>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-md-8 mt-3 offset-md-2">
+        <form method="post" style="margin-top: 1.3em;">
+          <table>
+            {{ contact_form | crispy }}
+            {% csrf_token %}
+            {{ form.as_table }}
+          </table>
+          <br>
+          <button type="submit" class="btn btn-signup">Submit</button>
+          <hr>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
+  <br>
 
-<div id="contact" class="container">
-    <h3 class="text-center">Contact</h3>
-    <p class="text-center"><em>We love our fans!</em></p>
-  
-    <div class="row">
-      <div class="col-md-3 offset-md-1">
-        <p>Fan? Drop a note.</p>
-        <p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
-        <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
-        <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
-      </div>
-      <div class="col-md-7">
-        <div class="row">
-          <div class="col-sm-6 form-group mb-2">
-            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-          </div>
-          <div class="col-sm-6 form-group mb-2" >
-            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-          </div>
-        </div>
-        <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-        <div class="row">
-          <div class="col-md-12 form-group">
-            <button class="btn pull-right" type="submit">Send</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-
-{% endblock %}
+  {% endblock %}

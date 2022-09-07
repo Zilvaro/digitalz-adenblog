@@ -142,7 +142,7 @@ body {
 }
 
 .contact-background {
-    background-image: url(https://res.cloudinary.com/zilvacloud/image/upload/v1661247073/mountain-vertical-photo_roztmt.jpg);
+    background-image: url(https://res.cloudinary.com/zilvacloud/image/upload/v1662554850/white-sky_kvvex2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -155,5 +155,10 @@ body {
 }
 
 #id_contact_message {
-    width: 50vw;
+    width: 52vw;
+}
+
+
+.btn-signup {
+    background-color: #47ad8e;
 }
