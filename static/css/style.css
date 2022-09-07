@@ -25,6 +25,10 @@ body {
     background-color: #445261;
 }
 
+.darker-bg {
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
 .main-bg {
     background-color: #F9FAFC;
 }
@@ -155,10 +159,14 @@ body {
 }
 
 #id_contact_message {
-    width: 52vw;
+    width: 51vw;
 }
 
 
 .btn-signup {
     background-color: #47ad8e;
+}
+
+.image-flash {
+    background-color: rgba(0, 0, 0, 0.6)
 }
