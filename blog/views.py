@@ -85,13 +85,14 @@ class AddPostView(generic.CreateView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'add_post.html'
-    fields = ('title', 'slug', 'author', 'featured_image', 'content', 'status')
+    form_class = AddPostForm
+
 
 
 class UpdatePostView(generic.UpdateView):
     model = Post
     template_name = 'update_post.html'
-    fields = ('title', 'slug', 'featured_image', 'content', 'status')
+    fields = ('title', 'featured_image', 'content', 'status')
 
 
 class DeletePostView(generic.DeleteView):
