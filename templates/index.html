@@ -26,17 +26,23 @@
                                     <div class="row darker-bg">
                                         <div class="col-12 left">
                                             <h1 class="card-title display-1">{{ post.hero_header | safe }}</h1>
-                                            <p class="card-text">{{ post.hero_card | safe }}</p>
+                                            <p class="card-text">{{ post.hero_excerpt | safe }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                         </div>
+
+
+
                         {% if user.is_authenticated and user == post.author %}
                         <small>
-                            <button type="button" class="btn btn-outline-secondary btn-sm"
-                                style="margin: 2px;">Edit</button>
-                            <button type="button" class="btn btn-outline-secondary btn-sm">Delete</button></small>
+                            <a aria-current="page" href="{% url 'update_content' post.hero_slug %}">
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                    style="margin: 2px;">Edit</button></a>
+                            <a aria-current="page" href="{% url 'delete_content' post.hero_slug %}">
+                                <button type="button" class="btn btn-outline-secondary btn-sm">Delete</button>
+                            </a></small>
                         {% endif %}
 
 
@@ -58,7 +64,7 @@
                                     <div class="col-7 col-md-8">
                                         <div class="card-body">
                                             <h1 class="card-title">{{ post.hero_header | safe }}</h1>
-                                            <p class="card-text">{{ post.hero_card | safe }}</p>
+                                            <p class="card-text">{{ post.hero_excerpt | safe }}</p>
                                         </div>
                                     </div>
                                 </div>

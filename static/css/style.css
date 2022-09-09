@@ -10,7 +10,7 @@ body {
 }
 
 .red-o {
-    color: #E84610;
+    color: #008CBA;
 }
 
 .thin {
@@ -97,7 +97,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #445261;
 }
 
 .post-title {
@@ -133,14 +133,14 @@ body {
 }
 
 .btn-like {
-    color: #E84610;
+    color: #47ad8e;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #445261;
     background: transparent;
     border: none;
 }
@@ -164,7 +164,7 @@ body {
 
 
 .btn-signup {
-    background-color: #47ad8e;
+    background-color: #445261;
 }
 
 .image-flash {

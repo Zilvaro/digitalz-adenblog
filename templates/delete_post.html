@@ -7,7 +7,7 @@
 {% if user.is_authenticated and user == post.author %}
 <div class="container">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2"><br/>
+        <div class="col-md-8 mt-3 offset-md-2"><br />
             <h3>Delete Post: "{{post.title}}"</h3>
             <br>
             <h4> Are you sure ?! </h4>
@@ -16,15 +16,14 @@
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <table>
-                <form method="POST" style="margin-top: 1.3em;">
+            <form method="POST" style="margin-top: 1.3em;">
+                <table>
                     {{ add_post_form | crispy }}
                     {% csrf_token %}
-                    <br>
-            </table>
-                    <button type="submit" class="btn btn-signup btn-lg">Delete Post</button>                           
-                </form>                
-            
+                </table>
+                <button type="submit" class="btn btn-signup btn-lg">Delete Post</button>
+            </form>
+
             <br>
         </div>
     </div>

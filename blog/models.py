@@ -31,7 +31,7 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            # set the slug based on the submitted title
+            # the slug is set based on the submitted title
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
 
@@ -69,9 +69,8 @@ class HeroContent(models.Model):
     )
     hero_featured_image = CloudinaryField('image', default='placeholder')
     image_alt_text = models.CharField(max_length=200, blank=True, default='aden wellness theme image')
-    hero_excerpt = models.TextField(blank=True)
     hero_header = models.CharField(max_length=200, blank=True)
-    hero_card = models.TextField(blank=True, null=True)
+    hero_excerpt = models.TextField(blank=True)    
     images_on_mobile_page = models.IntegerField(choices=IMAGECOUNTMOBILE, default=12)
     images_on_desktop = models.IntegerField(choices=IMAGECOUNTDESKTOP, default=6)
     image_height = models.IntegerField(choices=IMAGEHEIGHT, default=27)
@@ -84,6 +83,12 @@ class HeroContent(models.Model):
     
     class Meta:
         ordering = ["-created_on"]
+
+    def save(self, *args, **kwargs):
+        if not self.hero_slug:
+            # the slug is set based on the submitted title
+            self.hero_slug = slugify(self.hero_title)
+        return super().save(*args, **kwargs)
 
     def __str__(self):
         return self.hero_title

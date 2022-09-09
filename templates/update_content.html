@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Update Post..." %}</h3>
+            <h3>{% trans "Update Content..." %}</h3>
             <hr>
         </div>
     </div>
@@ -17,7 +17,7 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <table>
                 <form method="POST" enctype="multipart/form-data" style="margin-top: 1.3em;">
-                    {{ add_post_form | safe }}
+                    {{ add_content_form | safe }}
                     {% csrf_token %}
                     {{ form.media }}
                     {{ form.as_table }}

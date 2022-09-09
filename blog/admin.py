@@ -31,7 +31,7 @@ class HeroContentAdmin(SummernoteModelAdmin):
     search_fields = ['hero_title', 'hero_content']
     list_filter = ('status', 'created_on')
     prepopulated_fields = {'hero_slug': ('hero_title',)}
-    summernote_fields = ('hero_content', 'hero_header', 'hero_excerpt', 'hero_card',)
+    summernote_fields = ('hero_content', 'hero_header', 'hero_excerpt',)
 
 
 @admin.register(ContactMessage)

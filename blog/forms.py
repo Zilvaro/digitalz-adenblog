@@ -21,10 +21,17 @@ class AddPostForm(forms.ModelForm):
 class AddContentForm(forms.ModelForm): 
     class Meta:
         model = HeroContent
-        fields = ('hero_title', 'hero_slug', 'author', 'hero_featured_image',
-                  'image_alt_text', 'hero_header', 'hero_card',
-                  'images_on_desktop', 'hero_content', 'status',)
-      
+        fields = ('hero_title', 'author', 'hero_featured_image',
+                  'image_alt_text', 'hero_header', 'hero_excerpt', 
+                  'images_on_desktop', 'image_height', 'image_place',
+                  'image_order', 'hero_content', 'status',)
+        widgets = {
+            'hero_header': SummernoteWidget(),
+            'hero_excerpt': SummernoteWidget(),        
+            'hero_content': SummernoteWidget(),
+            'author': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id': 'writer'}),
+        }
+
 
 class ContactForm(forms.ModelForm):
     class Meta:

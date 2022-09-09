@@ -88,11 +88,10 @@ class AddPostView(generic.CreateView):
     form_class = AddPostForm
 
 
-
 class UpdatePostView(generic.UpdateView):
     model = Post
     template_name = 'update_post.html'
-    fields = ('title', 'featured_image', 'content', 'status')
+    form_class = AddPostForm
 
 
 class DeletePostView(generic.DeleteView):
@@ -141,6 +140,17 @@ class AddContentView(generic.CreateView):
     model = HeroContent
     queryset = HeroContent.objects.filter(status=1).order_by('-created_on')
     template_name = 'add_content.html'
-    fields = ('hero_title', 'hero_slug', 'author', 'hero_featured_image',
-              'image_alt_text', 'hero_header', 'hero_card',
-              'images_on_desktop', 'hero_content', 'status')
+    form_class = AddContentForm
+
+
+class UpdateContentView(generic.UpdateView):
+    model = HeroContent
+    template_name = 'update_content.html'
+    form_class = AddContentForm
+
+
+class DeleteContentView(generic.DeleteView):
+    model = HeroContent
+    template_name = 'delete_content.html'
+    success_url = reverse_lazy('home')
+
