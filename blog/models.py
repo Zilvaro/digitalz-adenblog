@@ -63,7 +63,7 @@ class Comment(models.Model):
 
 class HeroContent(models.Model):
     hero_title = models.CharField(max_length=200, unique=True)
-    hero_slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="hero_content_posts"
     )
@@ -85,9 +85,9 @@ class HeroContent(models.Model):
         ordering = ["-created_on"]
 
     def save(self, *args, **kwargs):
-        if not self.hero_slug:
+        if not self.slug:
             # the slug is set based on the submitted title
-            self.hero_slug = slugify(self.hero_title)
+            self.slug = slugify(self.hero_title)
         return super().save(*args, **kwargs)
 
     def __str__(self):

@@ -29,7 +29,6 @@ class AddContentForm(forms.ModelForm):
             'hero_header': SummernoteWidget(),
             'hero_excerpt': SummernoteWidget(),        
             'hero_content': SummernoteWidget(),
-            'author': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id': 'writer'}),
         }
 
 
