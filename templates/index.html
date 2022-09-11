@@ -29,16 +29,17 @@
                                             <p class="card-text">{{ content.hero_excerpt | safe }}</p>
                                         </div>
                                     </div>
-                                    {% endif %}
+                                    {% else %}
                                     <div class="col-12 left">
                                         <h1 class="card-title display-1">{{ content.hero_header | safe }}</h1>
                                         <p class="card-text">{{ content.hero_excerpt | safe }}</p>
                                     </div>
+                                    {% endif %}
                                 </div>
                             </a>
                         </div>
 
-                        {% if user.is_authenticated and user == content.author %}
+                        {% if user.is_authenticated and user == content.author or user.name == admin %}
                         <small>
                             <a aria-current="page" href="{% url 'update_content' content.slug %}">
                                 <button type="button" class="btn btn-outline-secondary btn-sm"
@@ -75,7 +76,7 @@
                             </a>
                         </div>
 
-                        {% if user.is_authenticated and user == content.author %}
+                        {% if user.is_authenticated and user == content.author or user.name == admin %}
                         <small>
                             <a aria-current="page" href="{% url 'update_content' content.slug %}">
                                 <button type="button" class="btn btn-outline-secondary btn-sm"
@@ -184,6 +185,6 @@
 
 <div class="image-container">
     <img class="card-img-top"
-        src="https://res.cloudinary.com/zilvacloud/image/upload/v1662892691/our_wellness_approach_bvvqgt.jpg">
+        src="https://res.cloudinary.com/zilvacloud/image/upload/v1662905005/our_wellness_approach_green_c5yoep.jpg">
 </div>
 {%endblock%}
