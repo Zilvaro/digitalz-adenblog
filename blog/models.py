@@ -85,7 +85,7 @@ class HeroContent(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ["image_order"]
 
     def save(self, *args, **kwargs):
         if not self.slug:

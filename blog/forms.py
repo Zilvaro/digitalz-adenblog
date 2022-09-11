@@ -23,7 +23,7 @@ class AddContentForm(forms.ModelForm):
     class Meta:
         model = HeroContent
         fields = ('hero_title', 'author', 'hero_featured_image',
-                  'image_alt_text', 'hero_header', 'hero_excerpt', 
+                  'image_alt_text', 'hero_header', 'hero_excerpt',
                   'images_on_desktop', 'image_height', 'image_place',
                   'image_order', 'hero_content', 'status',)
         widgets = {

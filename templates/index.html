@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="col-7 col-md-8">
                                         <div class="card-body">
-                                            <h1 class="card-title">{{ content.hero_header | safe }}</h1>
+                                            <h1 class="card-title display-1">{{ content.hero_header | safe }}</h1>
                                             <p class="card-text">{{ content.hero_excerpt | safe }}</p>
                                         </div>
                                     </div>
@@ -138,7 +138,7 @@
                                 <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}
 
-                                {% if user.is_authenticated and user == post.author %}
+                                {% if user.is_authenticated and user == post.author or user.name == admin %}
                                 <small>
                                     - <a aria-current="page" href="{% url 'update_post' post.slug %}"><button
                                             type="button" class="btn btn-outline-secondary btn-sm">Edit</button></a>

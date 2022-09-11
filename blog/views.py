@@ -153,5 +153,6 @@ class UpdateContentView(generic.UpdateView):
 class DeleteContentView(generic.DeleteView):
     model = HeroContent
     template_name = 'delete_content.html'
+    form_class = AddContentForm
     success_url = reverse_lazy('home')
 

@@ -17,5 +17,5 @@ urlpatterns = [
 
     path('add_content/', views.AddContentView.as_view(), name="add_content"),
     path('update/<slug:slug>', views.UpdateContentView.as_view(), name='update_content'),
-    path('erase/<slug:slug>', views.DeleteContentView.as_view(), name='delete_content'),
+    path('delete_content/<slug:slug>', views.DeleteContentView.as_view(), name='delete_content'),
   ]
