@@ -19,7 +19,7 @@
                                     alt="relaxing image">
                                 {% else %}
                                 <img class="card-img hero-image" src="{{ content.hero_featured_image.url }}"
-                                    style="height:{{ content.image_height }}vw" alt="{{ content.image_alt_text }}" />
+                                     alt="{{ content.image_alt_text }}" />
                                 {% endif %}
                                 <div class="card-img-overlay">
                                     <div class="row darker-bg">
@@ -118,7 +118,7 @@
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
+                                    <p class="author">{{ post.posted_by | safe }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
