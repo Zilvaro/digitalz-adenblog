@@ -22,11 +22,17 @@
                                      alt="{{ content.image_alt_text }}" />
                                 {% endif %}
                                 <div class="card-img-overlay">
-                                    <div class="row darker-bg">
+                                    {% if content.text_background == 2 %}
+                                    <div class="row darker-bg">                                    
                                         <div class="col-12 left">
                                             <h1 class="card-title display-1">{{ content.hero_header | safe }}</h1>
                                             <p class="card-text">{{ content.hero_excerpt | safe }}</p>
                                         </div>
+                                    </div>
+                                    {% endif %}
+                                    <div class="col-12 left">
+                                        <h1 class="card-title display-1">{{ content.hero_header | safe }}</h1>
+                                        <p class="card-text">{{ content.hero_excerpt | safe }}</p>
                                     </div>
                                 </div>
                             </a>

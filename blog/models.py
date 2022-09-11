@@ -10,6 +10,7 @@ IMAGECOUNTMOBILE = ((12, "Whole Page"), (6, "2xPage"))
 IMAGECOUNTDESKTOP = ((12, "Whole Page"), (8, "2/3 of Page"), (6, "Half of Page"), (4, "1/3 of Page"), (3, "1/4 of Page"))
 IMAGEHEIGHT = ((32, "320px"), (27, "270px"), (16, "160px"), (8, "88px"), (5, "50px") )
 IMAGEPLACE = ((1, "Image-as-background"), (2, "Image-on-side"), (3, "Image-on-top"))
+TEXTBACKGROUND = ((1, "No background"), (2, "Put background"))
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -71,6 +72,7 @@ class HeroContent(models.Model):
     hero_featured_image = CloudinaryField('image', default='placeholder')
     image_alt_text = models.CharField(max_length=200, blank=True, default='aden wellness theme image')
     hero_header = models.CharField(max_length=200, blank=True)
+    text_background = models.IntegerField(choices=TEXTBACKGROUND, default=1)
     hero_excerpt = models.TextField(blank=True)    
     images_on_mobile_page = models.IntegerField(choices=IMAGECOUNTMOBILE, default=12)
     images_on_desktop = models.IntegerField(choices=IMAGECOUNTDESKTOP, default=6)
