@@ -5,7 +5,7 @@ urlpatterns = [
     path("", views.PostList.as_view(), name="home"),
     
     path('post/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'), 
-    path('hero/<slug:slug>/', views.HeroContentDetail.as_view(), name='hero_detail'),
+    path('hero/<slug:slug>', views.HeroContentDetail.as_view(), name='hero_detail'),
        
     
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
@@ -17,5 +17,5 @@ urlpatterns = [
 
     path('add_content/', views.AddContentView.as_view(), name="add_content"),
     path('update/<slug:slug>', views.UpdateContentView.as_view(), name='update_content'),
-    path('erase/<slug:slug>/', views.DeleteContentView.as_view(), name='delete_content'),
+    path('erase/<slug:slug>', views.DeleteContentView.as_view(), name='delete_content'),
   ]

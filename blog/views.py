@@ -125,14 +125,15 @@ class HeroContentDetail(generic.DetailView):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = HeroContent.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
+        
+        content = get_object_or_404(queryset, slug=slug)
         
         return render(
             request,
             "hero_detail.html",
             {
-               "post": post,
-           },
+               "content": content,
+            },
         )
 
 

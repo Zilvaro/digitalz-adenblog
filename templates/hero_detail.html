@@ -1,21 +1,23 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 {% load crispy_forms_tags %}
+
 
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ post.hero_title }}</h1>
+                <h1 class="post-title">{{ content.hero_title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle">| {{ content.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in post.hero_featured_image.url %}
+                {% if "placeholder" in content.hero_featured_image.url %}
                 <img src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg" width="100%">
                 {% else %}
-                <img src=" {{ post.hero_featured_image.url }}" width="100%">
+                <img src=" {{ content.hero_featured_image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
@@ -29,7 +31,7 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
-                    {{ post.hero_content|safe }}
+                    {{ content.hero_content|safe }}
                 </p>                
             </div>
         </div>
@@ -38,7 +40,12 @@
         <div class="col">
             <hr>
         </div>
-    </div>    
+    </div>   
+    <a class="nav-link" aria-current="page" href="{% url 'home' %}">
+        <h4 class="btn btn-secondary">Back</h4></a>
+    
 </div>
 
-{% endblock content %}
+
+
+{% endblock content%}

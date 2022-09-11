@@ -15,6 +15,7 @@ class AddPostForm(forms.ModelForm):
         fields = ('title', 'author', 'featured_image', 'content', 'status',)        
         widgets = {
             'content': SummernoteWidget(),
+            'posted_by': SummernoteWidget(),
         }
 
 
