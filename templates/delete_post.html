@@ -16,17 +16,11 @@
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <form method="POST" style="margin-top: 1.3em;">
-                <table>
-                    {{ add_post_form | crispy }}
-                    {% csrf_token %}
-                </table>
-                <button type="submit" class="btn btn-signup btn-lg">Delete Post</button>
-            </form>
-
-            <br>
+            <button type="submit" class="btn btn-signup btn-sm">Delete Post</button>
+            <a aria-current="page" href="{% url 'home' %}">
+            <button type="button" class="btn btn-outline-secondary btn-sm">Back</button></a>         
         </div>
-    </div>
+    </div>    
 </div>
 
 {% else %}

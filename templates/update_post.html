@@ -15,21 +15,21 @@
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <table>
-                <form method="POST" enctype="multipart/form-data" style="margin-top: 1.3em;">
+            <form method="POST" enctype="multipart/form-data" style="margin-top: 1.3em;">
+                <table>
                     {{ add_post_form | safe }}
                     {% csrf_token %}
                     {{ form.media }}
                     {{ form.as_table }}
                     <br>
-            </table>
-                    <br>        
-                    <button type="submit" class="btn btn-signup btn-lg">Update</button>                           
-                </form>                
-            
-            <br>
-            
-            <hr> 
+                </table>
+                <br>
+                <button type="submit" class="btn btn-signup btn-lg">Update</button>
+            </form>
+            <br>               
+            <a aria-current="page" href="{% url 'home' %}">
+            <button type="button" class="btn btn-outline-secondary btn-sm">Back to Content</button></a></small> 
+            <hr>
         </div>
     </div>
 </div>
@@ -47,4 +47,3 @@
 {% endif %}
 
 {% endblock %}
-

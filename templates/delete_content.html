@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2"><br/>
-            <h3>Delete content: "{{content.hero_title}}"</h3>
+            <h3>Delete content: "{{herocontent.hero_title}}"</h3>
             <br>
             <h4> Are you sure ?! </h4>
             <hr>
@@ -19,16 +19,9 @@
 
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <form method="POST" style="margin-top: 1.3em;">
-                <table>
-                    {{ add_content_form | crispy }}
-                    {% csrf_token %}
-                    {{form.media}}
-                    {{form.as_table}}
-                </table>
-                <button type="submit" class="btn btn-signup btn-lg">Delete Content</button>
-            </form>
-            <br>
+            <button type="submit" class="btn btn-signup btn-sm">Delete Content</button>
+            <a aria-current="page" href="{% url 'home' %}">
+            <button type="button" class="btn btn-outline-secondary btn-sm">Back</button></a>         
         </div>
     </div>
 </div>
