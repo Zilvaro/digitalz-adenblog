@@ -156,3 +156,10 @@ class DeleteContentView(generic.DeleteView):
     form_class = AddContentForm
     success_url = reverse_lazy('home')
 
+class DraftList(generic.TemplateView):
+    template_name = 'draft_content.html'
+    
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['hero_content'] = HeroContent.objects.all()
+        return context
