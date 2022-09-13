@@ -19,17 +19,18 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
     posted_by = models.TextField(null=True, blank=True)
+    order = models.IntegerField(default=1)
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
-    updated_on = models.DateTimeField(auto_now=True)
+    updated_on = models.DateField(auto_now=True)
     content = models.TextField(null=True, blank=True)
-    created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
 
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ["order"]
 
     def save(self, *args, **kwargs):
         if not self.slug:

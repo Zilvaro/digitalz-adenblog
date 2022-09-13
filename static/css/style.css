@@ -175,11 +175,6 @@ body {
     margin-left: 1.5rem;
 }
 
-
-#override .p, p *{
-    margin-left: 1rem;
-}
-
 .card-image {
     background-repeat: no-repeat;
     background-size: cover;

@@ -25,6 +25,13 @@
                 <br>
                 <button type="submit" class="btn btn-signup btn-lg">Submit</button>
             </form>
+
+            <script>
+                var name = "{{ user.id }}";
+                document.getElementById("writer").value
+                    = name;
+            </script>
+
             <br>
             <a aria-current="page" href="{% url 'home' %}">
             <button type="button" class="btn btn-outline-secondary btn-sm">Back to Content</button></a></small> 

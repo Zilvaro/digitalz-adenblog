@@ -12,10 +12,12 @@ class CommentForm(forms.ModelForm):
 class AddPostForm(forms.ModelForm):    
     class Meta:
         model = Post
-        fields = ('title', 'author', 'featured_image', 'content', 'status',)        
+        fields = ('title', 'author', 'posted_by', 'order', 'featured_image', 'excerpt', 'content', 'status',)        
         widgets = {
             'content': SummernoteWidget(),
             'posted_by': SummernoteWidget(),
+            'author': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id': 'poster', 'type': 'hidden'}),
+            'status': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id': 'status_id', 'type': 'hidden'}),
         }
 
 
@@ -30,6 +32,7 @@ class AddContentForm(forms.ModelForm):
             'hero_header': SummernoteWidget(),
             'hero_excerpt': SummernoteWidget(),       
             'hero_content': SummernoteWidget(),
+            'author': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id': 'writer', 'type': 'hidden'}),
         }
 
 
