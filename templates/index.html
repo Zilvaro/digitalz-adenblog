@@ -7,9 +7,9 @@
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for content in hero_content %}
+                {% if content.status == 1 %}
                 <div class="col-md-{{ content.images_on_desktop }}">
                     <div class="card mb-4">
-
                         {% if content.image_place == 1 %}
                         <div class="card mb-1">
                             <a href="{% url 'hero_detail' content.slug %}" class="post-link">
@@ -18,12 +18,17 @@
                                     src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"
                                     alt="relaxing image">
                                 {% else %}
-                                <img class="card-img hero-image" src="{{ content.hero_featured_image.url }}"
-                                     alt="{{ content.image_alt_text }}" />
+                                <span class="d-block d-sm-none">
+                                    <img class="card-img hero-image" src="{{ content.hero_featured_image.url }}"
+                                        alt="{{ content.image_alt_text }}" /></span>
+                                <span class="d-none d-sm-block">
+                                    <img class="card-img hero-image" style="height:{{ content.image_height }}vw"
+                                        src="{{ content.hero_featured_image.url }}"
+                                        alt="{{ content.image_alt_text }}" /></span>
                                 {% endif %}
                                 <div class="card-img-overlay">
                                     {% if content.text_background == 2 %}
-                                    <div class="row darker-bg">                                    
+                                    <div class="row darker-bg">
                                         <div class="col-12 left">
                                             <h1 class="card-title display-1">{{ content.hero_header | safe }}</h1>
                                             <p class="card-text">{{ content.hero_excerpt | safe }}</p>
@@ -54,22 +59,29 @@
                         <div class="card mb-1">
                             <a href="{% url 'hero_detail' content.slug %}" class="post-link">
                                 <div class="row">
-                                    <div class="col-5 col-md-4">
+                                    <div class="col-5 col-md-4"'>
                                         {% if "placeholder" in content.hero_featured_image.url %}
                                         <img class="rounded float-left img-fluid"
                                             src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"
                                             alt="relaxing image">
                                         {% else %}
-                                        <img class="rounded float-left img-fluid"
-                                            style="max-height:{{ content.image_height }}rem"
-                                            src="{{ content.hero_featured_image.url }}"
-                                            alt="{{ content.image_alt_text }}">
+                                        <span class="d-block d-sm-none">
+                                            <img style="height:{{ content.image_height }}vw;" src="{{ content.hero_featured_image.url }}"
+                                                alt="{{ content.image_alt_text }}" /></span>
+                                        <span class="d-none d-sm-block">
+                                            <img class="rounded float-left card-image"
+                                                src="{{ content.hero_featured_image.url }}"
+                                                alt="{{ content.image_alt_text }}"></span>
+
+                                            
+                                        
+                                        
                                         {% endif %}
                                     </div>
                                     <div class="col-7 col-md-8">
-                                        <div class="card-body">
-                                            <h1 class="card-title display-1">{{ content.hero_header | safe }}</h1>
-                                            <p class="card-text">{{ content.hero_excerpt | safe }}</p>
+                                        <div>
+                                            <p>{{ content.hero_header | safe }}</p>
+                                            <p style="margin-left:1rem;" >{{ content.hero_excerpt | safe }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +99,8 @@
                         {% endif %}
                         {% endif %}
                     </div>
-                </div>        
+                </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>

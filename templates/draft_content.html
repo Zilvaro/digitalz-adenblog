@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.name == author and herocontent.status == draft %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for content in hero_content %}
+                <div class="col-md-{{ content.images_on_desktop }}">
+                    <div class="card mb-4">
+
+                        {% if content.image_place == 1 %}
+                        <div class="card mb-1">
+                            <a href="{% url 'hero_detail' content.slug %}" class="post-link">
+                                {% if "placeholder" in content.hero_featured_image.url %}
+                                <img class="card-img hero-image" style="height:{{ content.image_height }}vw"
+                                    src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"
+                                    alt="relaxing image">
+                                {% else %}
+                                <img class="card-img hero-image" src="{{ content.hero_featured_image.url }}"
+                                     alt="{{ content.image_alt_text }}" />
+                                {% endif %}
+                                <div class="card-img-overlay">
+                                    {% if content.text_background == 2 %}
+                                    <div class="row darker-bg">                                    
+                                        <div class="col-12 left">
+                                            <h1 class="card-title display-1">{{ content.hero_header | safe }}</h1>
+                                            <p class="card-text">{{ content.hero_excerpt | safe }}</p>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <div class="col-12 left">
+                                        <h1 class="card-title display-1">{{ content.hero_header | safe }}</h1>
+                                        <p class="card-text">{{ content.hero_excerpt | safe }}</p>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </a>
+                        </div>
+
+                        {% if user.is_authenticated and user == content.author or user.name == admin %}
+                        <small>
+                            <a aria-current="page" href="{% url 'update_content' content.slug %}">
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                    style="margin: 2px;">Edit</button></a>
+                            <a aria-current="page" href="{% url 'delete_content' content.slug %}">
+                                <button type="button" class="btn btn-outline-secondary btn-sm">Delete</button>
+                            </a></small>
+                        {% endif %}
+
+
+                        {% else %}
+                        <div class="card mb-1">
+                            <a href="{% url 'hero_detail' content.slug %}" class="post-link">
+                                <div class="row">
+                                    <div class="col-5 col-md-4">
+                                        {% if "placeholder" in content.hero_featured_image.url %}
+                                        <img class="rounded float-left img-fluid"
+                                            src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"
+                                            alt="relaxing image">
+                                        {% else %}
+                                        <img class="rounded float-left img-fluid"
+                                            style="max-height:{{ content.image_height }}rem"
+                                            src="{{ content.hero_featured_image.url }}"
+                                            alt="{{ content.image_alt_text }}">
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        <div class="card-body">
+                                            <h1 class="card-title display-1">{{ content.hero_header | safe }}</h1>
+                                            <p class="card-text">{{ content.hero_excerpt | safe }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        {% if user.is_authenticated and user == content.author or user.name == admin %}
+                        <small>
+                            <a aria-current="page" href="{% url 'update_content' content.slug %}">
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                    style="margin: 2px;">Edit</button></a>
+                            <a aria-current="page" href="{% url 'delete_content' content.slug %}">
+                                <button type="button" class="btn btn-outline-secondary btn-sm">Delete</button>
+                            </a></small>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>        
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+{%endblock%}
