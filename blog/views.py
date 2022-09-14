@@ -139,7 +139,6 @@ class HeroContentDetail(generic.DetailView):
 
 class AddContentView(generic.CreateView):
     model = HeroContent
-    queryset = HeroContent.objects.filter(status=1).order_by('-created_on')
     template_name = 'add_content.html'
     form_class = AddContentForm
 
@@ -155,6 +154,7 @@ class DeleteContentView(generic.DeleteView):
     template_name = 'delete_content.html'
     form_class = AddContentForm
     success_url = reverse_lazy('home')
+
 
 class DraftList(generic.TemplateView):
     template_name = 'draft_content.html'
