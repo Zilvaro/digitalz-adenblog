@@ -1,26 +1,36 @@
-# Aden Blog
+![DigitalZ Aden Logo](/assets/readme_files/digitalz-aden-logo.jpg)
 
 
-![Aden Blog mockup images](assets/readme_files/mockup_image.jpg)
+# Welcome!
 
 
-Code Buddy is a website created to allow developers to ask questions and receive relevant answers from other developers.
+This digitalz-aden application is a real-life prototype destined to replace the current adenwell.com website.
+Aden Wellness is a brand of wellness products (supplements, essential oils,..) that is starting its activities with launching several products on Amazon USA. To promote their philosophy of business, present products, direct users to e-commerce or Amazon site they need an interactive website with an ability to offer users to comment and post their own ideas. 
 
-The main objective of the site is to allow developers to share knowledge and ideas, collaborate and help each other to find solutions to the problems they face. This is achieved by providing a platform of questions and answers, where users can search for the information they are looking for. Developers are also able to upvote or downvote the questions and answers in order to assure that relevant content gets highlighted.
+Therefore, the app has 2 distinctive parts:
+1.	Top part is the content selection of more permanent materials that are managed by the company (admin, UserAdmins)
+2.	Then blog/ad area - where the announcements, promotions, thoughts (including third parties) are displayed. It includes more interactivity with likes & comments.  
 
-Visit the deployed website [here](https://django-code-buddy.herokuapp.com/).
+The working version of the Digitals-AdenWell app can be found [here](https://digitalz-adenwell.herokuapp.com)
+
+
+![website preview](/assets/readme_files/am-i-responsive-black.JPG)
+
+
 
 
 ## Table of Contents
 
-- [Aden Blog](#aden-blog)
+- [Welcome!](#welcome)
   - [Table of Contents](#table-of-contents)
   - [User Experience (UX)](#user-experience-ux)
     - [Strategy](#strategy)
-      - [Project Goals](#project-goals)
-      - [User Goals](#user-goals)
-      - [Strategy Table](#strategy-table)
-    - [Scope](#scope)
+      - [Flexibility \& Impact](#flexibility--impact)
+      - [Security](#security)
+      - [User Stories - usage](#user-stories---usage)
+      - [User Stories - creation](#user-stories---creation)
+      - [Things, left "for next Iteration"](#things-left-for-next-iteration)
+    - [Stages](#stages)
       - [User Stories](#user-stories)
     - [Structure](#structure)
       - [Database Model](#database-model)
@@ -69,51 +79,75 @@ Visit the deployed website [here](https://django-code-buddy.herokuapp.com/).
 
 ### Strategy
 
-#### Project Goals
+In effect, Digitalz-Adenwell is a business presentation and customer engagement application with full content creation and management functionality from the front-end, strictly following the user admin rights (although everything can be altered and overwritten from the admin-backend too).
 
-* The website contains simple colors for a modern design and also to not draw attention from the content.
+#### Flexibility & Impact
 
-* Responsive design to make the website accessible on different screen sizes.
+* All content except of navbars can be created/updated or deleted by user from the front-end or admin module
+
+* Most of the fields support text & images.
+
+* ALT text can be created directly in the content form for higher searchability of the content
+
+* User can choose between layout options and how many items to put on one row on the screen
+
+* User can set the specific place for a specific content by assigning the content-order number 
+
+* User can set-up the height of the elements for larger screens.
+
+* User can create draft content and access it later to publish/update or delete
 
 * Structure is easy to understand and navigates effortlessly.
 
+
+#### Security
+
 * Site users are able to register an account in order to interact with the content.
 
-* Site users are able to upvote or downvote the questions and answers to help identify relevant content.
+* User can't select the author, he is author by default.
+
+* Update/Delete content/post are not accessible via browser if you are not the author.
+
+* Users can update/delete only the posts/content they have created.
+
+* Users can't make a draft of the Post - to keep the system and database cleaner.
 
 
-#### User Goals
+#### User Stories - usage
 
-* As a Site Admin, I want to manage the site content.
-
-* As a Site User, I want to be able to interact with the content.
-
-* As a Site User, I want the information to be easy to find and read.
-
-* As a Site User, I can create new questions and answers.
-
-* As a Site User, I want to manage the content I created.
-
-* As a Site User, I want to be able to help make the content more relevant.
+1.	As a **Site User** I can **register an account** so that **I can comment and like**
+2.	As a **Site User** I can **view a list of posts** so that **I can select one to read**
+3.	As a **Site User** I can **click on a post** so that **I can read the full text**
+4.	As a **Site User** I can **leave comments on a post** so that **I can be involved in the conversation**
+5.	As a **Site User** I can **like or unlike a post** so that **I can interact with the content**
+6.	As a **Site User** I can **click on a content** so that **I can read more about the topic**
+7.	As a **User / Admin** I can **view the number of likes on each post** so that **I can see which is the most popular or viral**
+8.	As a **User / Admin** I can **view comments on an individual post** so that **I can read the conversation**
 
 
-#### Strategy Table
+#### User Stories - creation
 
-Opportunity / Problem | Importance | Viability / Feasibility
---- | --- | ---
-Responsive design | 5 | 5
-Account registration | 5 | 5
-Ability to add profile picture | 3 | 2
-Social media signup | 3 | 2
-Create, edit and delete questions | 5 | 4
-Create, edit and delete replies | 5 | 4
-Ability to search for questions | 4 | 3
-Add tags to the questions | 3 | 1
-Upvote / downvote question and replies | 4 | 3
-**Total** | **37** | **29**
+9.	As a **User-admin** I can **create, edit, and delete a) content & b) posts directly on app** so that **I can manage the content area without accessing admin module**
+10.	As a ** Admin** I can **create draft content** so that **I can publish/ update or delete later** 
+11.	As a ** Admin** I can **approve or disapprove comments** so that **I can filter out objectionable comments**
+12.	As a ** Admin** I can **set the content width** so that **I can place different number of items on one row**
+13.	As a **Site Admin** I can **assign the post position number**, so **I can place posts according to importance** 
+14.	As a **Admin** I can **select the card height** so that **I can create better looking design**
+15.	As a **Admin** I can **select the card template** so that **I can create dynamic looking design**
+16.	As a **User** I can **create a contact message** so that **I can express my opinion or ask to contact back**
+
+  
+
+#### Things, left "for next Iteration"
+
+* As a **Site Admin** I can **set the publishing and validity date (&time) of the content** so that **I can manage content appearance**.
+
+* As a **Site Admin** I can **set the end date for the post** after which it moves to 'draft' status so that **I can keep the site cleaner**.
+  
+* Social media sign-up
 
 
-### Scope
+### Stages
 
 According to the strategy table, not all features can be implemented in the first release of the project. For this reason, the project will be divided in multiple phases. The first phase will include the features that have been identified in order to build the minimum viable product.
 
@@ -135,7 +169,7 @@ According to the strategy table, not all features can be implemented in the firs
 
 * Ability to add profile picture
 
-* Social media signup
+* 
 
 * Add tags to the questions
 
@@ -161,7 +195,7 @@ GitHub projects was used as my project management tool to track user stories. Us
 
 The website has been organized in a Hierarchical Tree Structure to ensure the site user navigates through the site effortlessly and intuitively. Here you can you can find the website map design.
 
-![Code Buddy website map](assets/readme_files/sitemap.jpg)
+![Digitalz Aden website map](assets/readme_files/sitemap.jpg)
 
 * Header, footer and navigation bar are consistent through all pages.
 
@@ -176,7 +210,7 @@ The website has been organized in a Hierarchical Tree Structure to ensure the si
 
 The database model has been designed using [drawsql](https://drawsql.app/). The type of database being used for the is relational database being managed using [PostgreSQL](https://www.postgresql.org/).
 
-![Code Buddy website map](assets/readme_files/db_model.png)
+![Digitalz Aden website map](assets/readme_files/db_model.png)
 
 **Question Model**
 
@@ -246,20 +280,18 @@ Leave Reply | ![Desktop leave reply wireframe image](assets/wireframes/leave_rep
 
 #### Color Scheme
 
-![Color scheme image](assets/readme_files/color_scheme.png)
+![Color scheme image](assets/readme_files/color-pallet.jpg)
 
-The colors used in the website are a teal blue color (#3F778D) for secondary buttons, navbar links, as well as for main buttons and links transitions. Charcoal (#253A47) is used for the main text, footer background, main buttons and secondary buttons and links transitions.
+The colors used in the website respect the green-golden color-scheme of Aden Wellness, represented in the logo. 
 
-A platinum (#E9EDE9) for the navigation bar and card footers background, footer and buttons content. A baby powder color (#FFFFFD) is also used in the main background and cards footer as well as for input fields.
-
-The colors are were chosen keeping in mind simplicity but also providing the website a modern design. This in order to keep the focus on the content but also appealing for the users.
+Main colors in the application are achieved through images, so complementary slate-gray (#445261) and baby powder (#FFFFFD) were chosen just to create some contrast, improve readibility and maintain consistent look. 
 
 
 #### Typography
 
-The main font being used in the site is Nunito, with sans-serif as a fallback in case Nunito doesn't get imported correctly. Roboto, with sans-serif as a fallback is used mainly for headings and the logo has been given the Quicksand font, with sans-serif as a fallback.
+The main font being used in the site is Segoe UI with occasional introduction of Roboto, with sans-serif as a fallback in case Segoe UI doesn't get imported correctly. 
 
-Nunito and Roboto were chosen after some research on fonts that are better for reading. Specially Nunito which has been used as main font. Quicksand was used for the logo for design purposes.
+Segoe UI was chosen after refresher-research on fonts that are better for reading, however Segoe UI has proven to be font-of-choice for a few years in app development.
 
 [Back to top ⇧](#code-buddy)
 
@@ -273,27 +305,21 @@ Nunito and Roboto were chosen after some research on fonts that are better for r
 * Responsive design across all device sizes.
 
 * Navigation Bar
-![Code Buddy Navigation Bar image](assets/readme_files/code_buddy_navbar.png)
+![Digitalz Aden Navigation Bar image](assets/readme_files/nav-bar.JPG)
 
-    *  Contains the main logo and section links.
+    *  Contains the main logo, links and Welcome! with user name.
 
-    * The navigation bar contains links to all sections to facilitate navigation across the site. It also has a hover effect that changes color to provide feedback to the Site User for a better user experience.
-
-* Search bar
-![Code Buddy Search Bar image](assets/readme_files/code_buddy_search_bar.png)
-
-    * Provide the Site User an input field and a Search button to be able to search for specific questions.
 
 * Footer
-  ![Code Buddy Footer image](assets/readme_files/code_buddy_footer.png)
+  ![Digitalz Aden Footer image](assets/readme_files/footer-bar.JPG)
 
-    * The footer includes a logo and link to social media channels.
+    * The footer includes a logo and link to social media channels (hidden while waiting for Aden Wellness approval to use).
 
 
 ### Home Page
 
 * Question list
-![Code Buddy Question List image](assets/readme_files/code_buddy_question_list.png)
+![Digitalz Aden Question List image](assets/readme_files/code_buddy_question_list.png)
 
     * Display a paginated list of all the question and its relevant information for the user to identify.
 
@@ -308,13 +334,13 @@ Nunito and Roboto were chosen after some research on fonts that are better for r
 
 ### About Page
 
-![Code Buddy About Page image](assets/readme_files/code_buddy_about.png)
+![Digitalz Aden About Page image](assets/readme_files/code_buddy_about.png)
 
 * Provide relevant information about the website's objective.
 
 
 ### Search Results Page
-![Code Buddy About Page image](assets/readme_files/code_buddy_search_results.png)
+![Digitalz Aden About Page image](assets/readme_files/code_buddy_search_results.png)
 
 * Display information about the Search being handled
 
@@ -322,7 +348,7 @@ Nunito and Roboto were chosen after some research on fonts that are better for r
 
 
 ### Question Detail Page
-![Code Buddy Question Detail Page image](assets/readme_files/code_buddy_question_detail.png)
+![Digitalz Aden Question Detail Page image](assets/readme_files/code_buddy_question_detail.png)
 
 * Display the full question a well as a list of its replies.
 
@@ -334,36 +360,36 @@ Nunito and Roboto were chosen after some research on fonts that are better for r
 
 
 ### Ask Question Page
-![Code Buddy Ask Question Page](assets/readme_files/code_buddy_ask_question.png)
+![Digitalz Aden Ask Question Page](assets/readme_files/code_buddy_ask_question.png)
 
 * Provide a form to allow registered Site Users to create a new question.
 
 ### Leave Reply Page
-![Code Buddy Leave Reply Page](assets/readme_files/code_buddy_leave_reply.png)
+![Digitalz Aden Leave Reply Page](assets/readme_files/code_buddy_leave_reply.png)
 
 * Provide a form to allow registered Site Users to create a new reply to the questions.
 
 
 ### Edit Question Page
-![Code Buddy Edit Question Page](assets/readme_files/code_buddy_edit_question.png)
+![Digitalz Aden Edit Question Page](assets/readme_files/code_buddy_edit_question.png)
 
 * Provide a prepopulated form to allow the Site User to edit a question they created.
 
 
 ### Delete Question Page
-![Code Buddy Edit Question Page](assets/readme_files/code_buddy_delete_question.png)
+![Digitalz Aden Edit Question Page](assets/readme_files/code_buddy_delete_question.png)
 
 * Provide a form to allow the Site User to delete a question they created.
 
 
 ### Edit Reply Page
-![Code Buddy Edit Question Page](assets/readme_files/code_buddy_edit_reply.png)
+![Digitalz Aden Edit Question Page](assets/readme_files/code_buddy_edit_reply.png)
 
 * Provide a prepopulated form to allow the Site User to edit a reply they created.
 
 
 ### Delete Reply Page
-![Code Buddy Edit Question Page](assets/readme_files/code_buddy_delete_reply.png)
+![Digitalz Aden Edit Question Page](assets/readme_files/code_buddy_delete_reply.png)
 
 * Provide a form to allow the Site User to delete a reply they created.
 
@@ -372,9 +398,9 @@ Nunito and Roboto were chosen after some research on fonts that are better for r
 
 Page | Purpose | Image |
 --- | --- | --- |
-Register | Allow the Site User to sign up an account for the website. | ![Code Buddy Sign Up Page](assets/readme_files/code_buddy_sing_up.png) |
-Login | Allow the Site User to sign in with their account. | ![Code Buddy Sign In Page](assets/readme_files/code_buddy_sign_in.png) |
-Logout | Allow the Site User to sign out from their account. | ![Code Buddy Sign Out Page](assets/readme_files/code_buddy_sign_out.png) |
+Register | Allow the Site User to sign up an account for the website. | ![Digitalz Aden Sign Up Page](assets/readme_files/code_buddy_sing_up.png) |
+Login | Allow the Site User to sign in with their account. | ![Digitalz Aden Sign In Page](assets/readme_files/code_buddy_sign_in.png) |
+Logout | Allow the Site User to sign out from their account. | ![Digitalz Aden Sign Out Page](assets/readme_files/code_buddy_sign_out.png) |
 
 
 [Back to top ⇧](#code-buddy)
@@ -563,20 +589,13 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 Page | Desktop | Mobile |
 --- | --- | --- |
-| Home | ![Desktop Home Page image](assets/readme_files/desktop_home.png) | ![Mobile Home Page image ](assets/readme_files/mobile_home.png) |
-| About | ![Desktop About Page image](assets/readme_files/desktop_about.png) | ![Mobile About Page image](assets/readme_files/mobile_about.png) |
-| Search Results | ![Desktop Search Results Page image](assets/readme_files/desktop_search_results.png) | ![Mobile Search Results Page image](assets/readme_files/mobile_search_results.png) |
-| Question Detail |![Desktop Question Detail Page image](assets/readme_files/desktop_question_detail.png) | ![Mobile Question Detail Page image](assets/readme_files/mobile_question_detail.png) |
-| Ask Question |![Desktop Ask Question Page image](assets/readme_files/desktop_ask_question.png) | ![Mobile Ask Question Page image](assets/readme_files/mobile_ask_question.png) |
-| Leave Reply |![Desktop Leave Reply Page image](assets/readme_files/desktop_leave_reply.png) | ![Mobile Leave Reply Page image](assets/readme_files/mobile_leave_reply.png) |
-| Edit Question | ![Desktop Edit Question Page image](assets/readme_files/desktop_edit_question.png) | ![Mobile Edit Question Page image](assets/readme_files/mobile_edit_question.png) |
-| Delete Question |![Desktop Delete Question Page image](assets/readme_files/desktop_delete_question.png) | ![Mobile Delete Question Page image](assets/readme_files/mobile_delete_question.png) |
-| Edit Reply |![Desktop Edit Reply Page image](assets/readme_files/desktop_edit_reply.png) | ![Mobile Edit Reply Page image](assets/readme_files/mobile_edit_reply.png) |
-| Delete Reply |![Desktop Delete Reply Page image](assets/readme_files/desktop_delete_reply.png) | ![Mobile Delete Reply Page imag](assets/readme_files/mobile_delete_reply.png) |
-| Sign Up |![Desktop Sign Up Page image](assets/readme_files/desktop_sign_up.png) | ![Mobile Sign Up Page image](assets/readme_files/mobile_sign_up.png) |
-| Sign In |![Desktop Sing In Page image](assets/readme_files/desktop_login.png) | ![](assets/readme_files/mobile_login.png) |
-| Sign Out |![Desktop Sign Out Page image](assets/readme_files/desktop_logout.png) | ![Mobile Sign Out Page image](assets/readme_files/mobile_logout.png) |
-| 404 Error |![Desktop 404 Error Page image](assets/readme_files/desktop_404.png) | ![Mobile 404 Error Page image](assets/readme_files/mobile_404.png) |
+| Home | ![Desktop Home Page image](assets/readme_files/home-desktop.jpg) | ![Mobile Home Page image ](assets/readme_files/home-mobile.jpg) |
+| Content | ![Desktop Content Page image](assets/readme_files/content-desktop.JPG) | ![Mobile Content Page image](assets/readme_files/content-mobile.jpg) |
+| Post | ![Desktop Post Page image](assets/readme_files/post-desktop.jpg) | ![Mobile Post Page image](assets/readme_files/post-mobile.jpg) |
+| Contact |![Desktop Contact Page image](assets/readme_files/contact-desktop.JPG) | ![Mobile Contact Page image](assets/readme_files/contact-mobile.JPG) |
+| Register |![Desktop Register Page image](assets/readme_files/register-desktop.JPG) | ![Mobile Register Page image](assets/readme_files/register-mobile.JPG) |
+| Log-in |![Desktop Log-in Page image](assets/readme_files/login-desktop.JPG) | ![Mobile Log-in Page image](assets/readme_files/login-mobile.JPG) |
+| Log-out | ![Desktop Log-out Page image](assets/readme_files/logout-mobile.JPG) | ![Mobile Log-out Page image](assets/readme_files/logout-mobile.JPG) |
 
 
 [Back to top ⇧](#code-buddy)
@@ -586,7 +605,7 @@ Page | Desktop | Mobile |
 ### Content
 
 * Website content was written by the developer.
-* Example questions and replies were taken from [Stack Overflow](https://stackoverflow.com/)-
+* Example images & some quotes were taken from [Aden Wellness](https://adenwell.com/)-
 
 ### Media
 

@@ -9,7 +9,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 IMAGECOUNTMOBILE = ((12, "Whole Page"), (6, "2xPage"))
 IMAGECOUNTDESKTOP = ((12, "Whole Page"), (8, "2/3 of Page"), (6, "Half of Page"), (4, "1/3 of Page"), (3, "1/4 of Page"))
 IMAGEHEIGHT = ((40, "400px"), (32, "320px"), (27, "270px"), (20, "220px"), (16, "160px"), (8, "88px"), (5, "50px") )
-IMAGEPLACE = ((1, "Image-as-background"), (2, "Image-on-side"), (3, "Image-on-top"))
+IMAGEPLACE = ((1, "Image-as-background"), (2, "Image-on-side"))
 TEXTBACKGROUND = ((1, "No background"), (2, "Put background"))
 
 class Post(models.Model):
