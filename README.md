@@ -154,7 +154,7 @@ The Planning & Execution of DigitalZ-Aden project was in 4 distinct phases:
 
 #### Ideation, prioritization and planning
 
-The current webdesign of AdenWellness [here](https://digitalz-adenwell.herokuapp.com) was reviewed and discussed, what would be the 'wishes' for the new design:
+The current webdesign of AdenWellness [here](https://adenwell.com/) was reviewed and discussed, what would be the 'wishes' for the new design:
 
 * Responsive design
 
@@ -512,8 +512,7 @@ Logout | Allow the Site User to sign out from their account. | ![Digitalz Aden S
 
 ## Testing
 
-The testing documentation can be found [here](https://github.com/josswe26/code-buddy/blob/main/TESTING.md#code-buddy-testing).
-
+The testing documentation can be found [here](https://github.com/Zilvaro/digitalz-adenblog/blob/main/TESTING.md#digitalz-adenblog-testing).
 
 [Back to top ⇧](#code-buddy)
 
