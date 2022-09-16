@@ -31,6 +31,7 @@ The working version of the Digitals-AdenWell app can be found [here](https://dig
       - [User Stories - creation](#user-stories---creation)
       - [Things, left "for next Iteration"](#things-left-for-next-iteration)
     - [Stages](#stages)
+      - [Ideation, prioritization and planning](#ideation-prioritization-and-planning)
       - [User Stories](#user-stories)
     - [Structure](#structure)
       - [Database Model](#database-model)
@@ -149,21 +150,28 @@ In effect, Digitalz-Adenwell is a business presentation and customer engagement 
 
 ### Stages
 
-According to the strategy table, not all features can be implemented in the first release of the project. For this reason, the project will be divided in multiple phases. The first phase will include the features that have been identified in order to build the minimum viable product.
+The Planning & Execution of DigitalZ-Aden project was in 4 distinct phases: 
 
-**First Phase**
+#### Ideation, prioritization and planning
+
+The current webdesign of AdenWellness [here](https://digitalz-adenwell.herokuapp.com) was reviewed and discussed, what would be the 'wishes' for the new design:
 
 * Responsive design
 
 * Account registration
 
-* Create, edit and delete questions
+* Create, edit and delete content from fron-ent, not only from admin module
 
-* Create, edit and delete replies
+* Separate permanent content from the promotional materials and posts
 
-* Ability to search for questions
+* Ability to interact with users via comments and contact messages
 
-* Upvote / downvote question and replies
+* Ability to create interesting and varied content without other tools (editors, design tools)
+
+* No link (at the moment) to external sorces : Amazon, e-commerce, etc.
+
+
+As a outcome - simple sketch of structure was drawn. 
 
 **Second Phase**
 
