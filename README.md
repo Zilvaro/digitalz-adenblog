@@ -129,12 +129,12 @@ In effect, Digitalz-Adenwell is a business presentation and customer engagement 
 #### User Stories - creation
 
 9.	As a **User-admin** I can **create, edit, and delete a) content & b) posts directly on app** so that **I can manage the content area without accessing admin module**
-10.	As a ** Admin** I can **create draft content** so that **I can publish/ update or delete later** 
-11.	As a ** Admin** I can **approve or disapprove comments** so that **I can filter out objectionable comments**
-12.	As a ** Admin** I can **set the content width** so that **I can place different number of items on one row**
+10.	As an **Admin** I can **create draft content** so that **I can publish/ update or delete later** 
+11.	As an **Admin** I can **approve or disapprove comments** so that **I can filter out objectionable comments**
+12.	As an **Admin** I can **set the content width** so that **I can place different number of items on one row**
 13.	As a **Site Admin** I can **assign the post position number**, so **I can place posts according to importance** 
-14.	As a **Admin** I can **select the card height** so that **I can create better looking design**
-15.	As a **Admin** I can **select the card template** so that **I can create dynamic looking design**
+14.	As an **Admin** I can **select the card height** so that **I can create better looking design**
+15.	As an **Admin** I can **select the card template** so that **I can create dynamic looking design**
 16.	As a **User** I can **create a contact message** so that **I can express my opinion or ask to contact back**
 
   

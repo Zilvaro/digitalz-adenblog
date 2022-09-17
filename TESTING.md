@@ -87,47 +87,110 @@
 
 ### 9. As a **User-admin** I can **create, edit, and delete a) content & b) posts directly on app** so that **I can manage the content area without accessing admin module**
 
-* As author I can access the post I have created.
-![User Stories CRUD Content - admin access](assets/testing_files/9us-edit-as-admin-user-1.jpg)
+* As author user can access the content item he has created.
+![User Stories CRUD Content - author access](assets/testing_files/9us-edit-as-admin-user-1.jpg)
 
-* This search field allow all Site Users to search questions using keyword(s).
+* User can edit multiple parameters in the Content-update form.
+![User Stories CRUD Content - form](assets/testing_files/9us-edit-as-admin-user-2.JPG)
 
-* A Search Results page with a list of questions matching the searched keyword(s) is provided.
+* User can press Update button to save changes.
+![User Stories CRUD Content - update button](assets/testing_files/9us-edit-as-admin-user-3.JPG)
 
-* The list gets paginated if the Search Results exceed 10 questions.
+* As author user can access the post he has created.     
+![User Stories CRUD Post - author access](assets/testing_files/9us-edit-post-admin-user-4.jpg)
 
+* User can make changes in the Post-update form.
+![User Stories CRUD Post - form](assets/testing_files/9us-edit-post-admin-user-5.JPG)
 
-### 10. As a Site User I can view a paginated list of questions so that I can easily select a question to view
+* User can see changes after pressing the update-button.
+![User Stories CRUD Post - updated post-title](assets/testing_files/9us-edit-post-admin-user-6.JPG)
 
-* The Question List displayed in the Home page is paginated every 10 questions.
+* As author user can chose to delete the post or content he has created.
+![User Stories CRUD Post - detete access](assets/testing_files/9us-delete-post-admin-user-7.JPG)
 
-* Navigation buttons are provided on the bottom of each page to navigate easily between pages.
+* User is requested to confirm the choice to delete the post or content.
+![User Stories CRUD Post - delete confirmation](assets/testing_files/9us-delete-post-admin-user-8.JPG)
 
-
-### 11. As a Site User I can click on a question so that I can read the full question and the replies received
-
-* A Question Detail page is provided for all Site Users to review the full question content.
-
-* The question title in the Question List page is provided as a link so that Site Users can access the Question Detail page for each specific question.
-
-
-### 12. As a Site User I can view the replies a question received so that I can find a solution to the question
-
-* Question's replies are being listed inside the Question Detail page for each specific question under the question content.
-
- * Replies are being sorted by their rating so that Site Users can find the most relevant replies on top.
+* User can see the post is deleted after pressing the delete-button.
+![User Stories CRUD Post - delete view](assets/testing_files/9us-delete-post-admin-user-9.JPG)
 
 
-### 13. As a Site User I can view the score on each question so that I can find the most helpful
+### 10. As an ** Admin** I can **create draft content** so that **I can publish/ update or delete later** 
 
-* The question's rating is being displayed for all Site Users next to each question.
+* The user can select DRAFT button to access the content drafts he has created.
+![User Stories CRUD Draft - author access](assets/testing_files/10us-draft-as-author-1.JPG)
+
+* User sees his drafts with an option to edit them.
+![User Stories CRUD Draft - edit access](assets/testing_files/10us-draft-as-author-2.JPG)
+
+* User can edit draft and/or publish it.
+![User Stories CRUD Draft - edit form](assets/testing_files/10us-draft-as-author-3.jpg)
+
+* User can see the daft being publiched to the app.
+![User Stories CRUD Draft - published view](assets/testing_files/10us-draft-as-author-4.JPG)
 
 
-### 14. As a Site User I can view the score on each reply so that I can find the most helpful
+### 11. As an ** Admin** I can **approve or disapprove comments** so that **I can filter out objectionable comments**
 
-* The reply's rating is being displayed for all Site Users next to each reply.
+* ![User Stories Comments - approval](assets/testing_files/11us-approve-comment-1.JPG)
 
-* Replies are ordered by this rating so Site Users can find the most relevant replies on top
+
+### 12. As an ** Admin** I can **set the content width** so that **I can place different number of items on one row**
+
+* User selects which content item to Edit to change share-of-screen width.
+![User Stories content-width - item](assets/testing_files/12us-content-width-1.JPG)
+
+* User selects screen's width portion.               
+![User Stories content-width - selection](assets/testing_files/12us-content-width-2.JPG)
+
+* User checks if changes makes the content look better
+![User Stories content-width - check](assets/testing_files/12us-content-width-3.JPG)
+
+
+### 13. As a **Site Admin** I can **assign the post position number**, so **I can place posts according to importance**
+
+* User selects which content item to Edit and checks current position-number.
+![User Stories content-position - item](assets/testing_files/13us-content-order-2.JPG)
+![User Stories content-position - item](assets/testing_files/13us-content-order-1.JPG)
+
+* User selects the new position-place for the content to be located.               
+![User Stories content-position - selection](assets/testing_files/13us-content-order-3.JPG)
+
+* User checks if changes are applied correctly
+![User Stories content-position - check](assets/testing_files/13us-content-order-4.JPG)
+
+
+### 14. As an **Admin** I can **select the card height** so that **I can create better looking design**
+
+* User selects which content item to Edit to change the height for screens larger than xs.
+![User Stories content-height - item](assets/testing_files/14us-content-height-1.JPG)
+
+* User selects screen's height in px.               
+![User Stories content-height - selection](assets/testing_files/14us-content-height-2.jpg)
+
+* User checks if changes makes the content look better
+![User Stories content-height - check](assets/testing_files/14us-content-height-3.JPG)
+
+
+### 15. As an **Admin** I can **select the card template** so that **I can create dynamic looking design**
+
+* User selects template type: with image behind the text or on the side               
+![User Stories content-template - selection](assets/testing_files/15us-card-template-1.JPG)
+
+* User checks if changes makes the content look better
+![User Stories content-template - check](assets/testing_files/15us-card-template-2.JPG)
+
+
+### 16. As a **User** I can **create a contact message** so that **I can express my opinion or ask to contact back**
+
+* User selects to oper Contact page from top nav menu.
+![User Stories Contact - link](assets/testing_files/16us-contact-1.JPG)
+
+* User writes the message to...                           
+![User Stories Contact - input](assets/testing_files/16us-contact-2.JPG)
+
+* Admin sees the messages in the backend               
+![User Stories Contact - backend](assets/testing_files/16us-contact-3.JPG)
 
 
 ## Code Validation
