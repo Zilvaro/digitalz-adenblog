@@ -13,6 +13,7 @@
 3. [Accessibility](#accessibility)
 4. [Tools Testing](#tools-testing)
 5. [Manual Testing](#manual-testing)
+6. [Security Testing](#security-testing)
 
 
 ***
@@ -298,13 +299,11 @@ Microsoft Edge | No appearance, responsiveness nor functionality issues. | <span
 
 Device | Operative System |Outcome | Pass/Fail
 --- | --- | --- | --- |
-Dell Optiplex 7060 | Windows 11 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-MacBook Pro 15" | macOS Big Sur | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-Dell Latitude 5300 | Windows 10 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-iPad Pro 12.9" | iOS 15 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-iPad Pro 10.5" | iOS 15 |No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-iPhone XR | iOS 15 |No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+HP Lattitude | Windows 10 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+Del XPS13 | Windows10 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+iPhone 6 | iOS 14 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+Samsung S20 | Android 10 |No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
 
 
 ### Test Results
@@ -337,18 +336,6 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td rowspan=2>All</td>
         <td>Functionality</td>
         <td>Clicking the link redirects to the Home page.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>About link</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Clicking the link redirects to the About page.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -404,93 +391,8 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td>Responsive navigation menu on smaller screens.<br>Hover effect working as expected.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
-    <tr>
-        <td rowspan=4>Search Bar</td>
-        <td rowspan=2>Input field</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Placeholder "Search Question" shows as expected.<br>Text can be entered in the field.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Focus effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Search button</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Clicking the link redirects to the Search Results page.<br>Input text is being posted to the Search Results page correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=10>Footer</td>
-        <td rowspan=2>Logo link</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Clicking the link redirects to the home page.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Facebook icon</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Clicking the link open Facebook page on a separate tab.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Instagram icon</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Clicking the link open Instagram page on a separate tab.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Youtube icon</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Clicking the link open Youtube page on a separate tab.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Twitter icon</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Clicking the link open Twitter page on a separate tab.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
 </table>
+
 
 #### Home Page 
 
@@ -503,11 +405,11 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <th>Pass/Fail</th>
     </tr>
     <tr>
-        <td rowspan=2>Page Buttons</td>
-        <td rowspan=2>Ask Question button</td>
+        <td rowspan=4>Page Buttons</td>
+        <td rowspan=2>Add Content button</td>
         <td rowspan=2>All</td>
         <td>Functionality</td>
-        <td>Clicking the button redirects to the Ask Question page.</td>
+        <td>Clicking the button redirects to the Add Content form page.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -516,23 +418,10 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
-        <td rowspan=12>Question</td>
-        <td rowspan=2>Score</td>
+        <td rowspan=2>Add Post button</td>
         <td rowspan=2>All</td>
         <td>Functionality</td>
-        <td>Score renders correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Title link</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Title renders correctly.<br>Clicking the link redirects to Question Detail page for the correct question.</td>
+        <td>Clicking the button redirects to the Add Post form page.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -541,10 +430,84 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
+        <td rowspan=8>Content Card</td>
+        <td rowspan=2>Image</td>
+        <td rowspan=2>All</td>
+        <td>Functionality</td>
+        <td>Image renders correctly.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>N/A</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td rowspan=2>Link</td>
+        <td rowspan=2>All</td>
+        <td>Functionality</td>
+        <td>Clicking the link redirects to Content Detail page for the correct card.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Hover effect working as expected.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td rowspan=2>Edit Content button</td>
         <td rowspan=2>Author</td>
+        <td>Functionality</td>
+        <td>Clicking the button redirects to Edit Content page for the correct question.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Hover effect working as expected.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td rowspan=2>Delete Content button</td>
+        <td rowspan=2>Author</td>
+        <td>Functionality</td>
+        <td>Clicking the button redirects to Delete Content page for the correct question.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Hover effect working as expected.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td rowspan=16>POST Card</td>
+        <td rowspan=2>Image</td>
         <td rowspan=2>All</td>
         <td>Functionality</td>
-        <td>Author renders correctly.</td>
+        <td>Image renders correctly.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>N/A</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td rowspan=2>Link</td>
+        <td rowspan=2>All</td>
+        <td>Functionality</td>
+        <td>Clicking the link redirects to Post Detail page for the correct card.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Hover effect working as expected.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td rowspan=2>Post Author</td>
+        <td rowspan=2>All</td>
+        <td>Functionality</td>
+        <td>Author renders correctly.<br>Field can be left blank.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -556,7 +519,7 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td rowspan=2>Last updated</td>
         <td rowspan=2>All</td>
         <td>Functionality</td>
-        <td>Date and time when the question was created display correctly.</td>
+        <td>Date and time when the Post was created display correctly.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -565,10 +528,22 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td>N/A</td>
     </tr>
     <tr>
-        <td rowspan=2>Edit Question button</td>
-        <td rowspan=2>Registered</td>
+        <td rowspan=2>Liked</td>
+        <td rowspan=2>All</td>
         <td>Functionality</td>
-        <td>Clicking the button redirects to Edit Question page for the correct question.</td>
+        <td>Icon and a number of likes that Post has generated.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>N/A</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td rowspan=2>Edit Content button</td>
+        <td rowspan=2>Author</td>
+        <td>Functionality</td>
+        <td>Clicking the button redirects to Edit Content page for the correct question.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -577,10 +552,10 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
-        <td rowspan=2>Delete Question button</td>
-        <td rowspan=2>Registered</td>
+        <td rowspan=2>Delete Content button</td>
+        <td rowspan=2>Author</td>
         <td>Functionality</td>
-        <td>Clicking the button redirects to Delete Question page for the correct question.</td>
+        <td>Clicking the button redirects to Delete Content page for the correct question.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -589,36 +564,10 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
-        <td rowspan=4>Voting</td>
-        <td rowspan=2>Upvote button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button toggle the user's upvote.<br>Score is updated by 1.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.<br>Button selection is not working correctly. Button stay selected/unselected for all users and not only for the current user.</td>
-        <td><span style="color:red">Fail</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Downvote button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button toggle the user's upvote.<br>Score is updated by -1.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.<br>Button selection is not working correctly. Button stay selected/unselected for all users and not only for the current user.</td>
-        <td><span style="color:red">Fail</span></td>
-    </tr>
-    <tr>
-        <td rowspan=4>Site Pagination</td>
         <td rowspan=2>Pagination</td>
         <td rowspan=2>All</td>
         <td>Functionality</td>
-        <td>Pagination occurs if more than 10 questions are listed.</td>
+        <td>Pagination occurs if more than 3 posts are listed.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -626,47 +575,10 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td>N/A</td>
         <td>N/A</td>
     </tr>
-    <tr>
-        <td rowspan=2>Pagination Buttons</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Clicking the buttons navigate back and forth between the pages.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
 </table>
 
 
-#### About Page 
-
-<table>
-    <tr>
-        <th>Feature</th>
-        <th>Users</th>
-        <th>Test</th>
-        <th>Outcome</th>
-        <th>Pass/Fail</th>
-    </tr>
-    <tr>
-        <td rowspan=2>General</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>About page render correctly</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>General styling</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-</table>
-
-
-#### Search Results Page
+#### Content/Post Detail Page
 
 <table>
     <tr>
@@ -677,381 +589,24 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <th>Pass/Fail</th>
     </tr>
     <tr>
-        <td rowspan=2>General</td>
-        <td rowspan=2>Main Title</td>
+        <td rowspan=10>Content</td>
+        <td rowspan=2>Title-Header</td>
         <td rowspan=2>All</td>
         <td>Functionality</td>
-        <td>Title display correct information depending on the results.</td>
+        <td>Article-post header is displayed for the slected content-post</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
         <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=12>Question</td>
-        <td rowspan=2>Score</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Score renders correctly.</td>
+        <td>Masthead type display working as expected.</td>
         <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Title link</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Title renders correctly.<br>Clicking the link redirects to Question Detail page for the correct question.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Author</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Author renders correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Last updated</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Date and time when the question was created display correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Edit Question button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button redirects to Edit Question page for the correct question.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Delete Question button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button redirects to Delete Question page for the correct question.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=4>Site Pagination</td>
-        <td rowspan=2>Pagination</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Pagination is not occurring if more than 10 questions are listed.</td>
-        <td><span style="color:red">Fail</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Pagination Buttons</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-</table>
-
-
-#### Question Detail Page
-
-<table>
-    <tr>
-        <th colspan=2>Feature</th>
-        <th>Users</th>
-        <th>Test</th>
-        <th>Outcome</th>
-        <th>Pass/Fail</th>
-    </tr>
-    <tr>
-        <td rowspan=2>Page Buttons</td>
-        <td rowspan=2>Reply Question button</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Clicking the button redirects to the Reply Question page.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=14>Question</td>
-        <td rowspan=2>Score</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Score renders correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Title</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Title renders correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Author</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Author renders correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
     </tr>
     <tr>
         <td rowspan=2>Content</td>
         <td rowspan=2>All</td>
         <td>Functionality</td>
-        <td>Content renders correctly.</td>
+        <td>Text is rendered correctly.</td>
         <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Last updated</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Date and time when the question was created display correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Edit Question button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button redirects to Edit Question page for the correct question.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Delete Question button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button redirects to Delete Question page for the correct question.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-        <tr>
-        <td rowspan=12>Reply</td>
-        <td rowspan=2>Score</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Score renders correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Body</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Body renders correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Author</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Author renders correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Last updated</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td>Date and time when the question was created display correctly.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td rowspan=2>Edit Reply button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button redirects to Edit Reply page for the correct reply.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Delete Reply button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button redirects to Delete Reply page for the correct reply.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=8>Voting</td>
-        <td rowspan=2>Queston Upvote button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button toggle the user's upvote.<br>Score is updated by 1.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.<br>Button selection is not working correctly. Button stay selected/unselected for all users and not only for the current user.</td>
-        <td><span style="color:red">Fail</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Question Downvote button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button toggle the user's upvote.<br>Score is updated by -1.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.<br>Button selection is not working correctly. Button stay selected/unselected for all users and not only for the current user.</td>
-        <td><span style="color:red">Fail</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Reply Upvote button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button toggle the user's upvote.<br>Score is updated by 1.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.<br>Button selection is not working correctly. Button stay selected/unselected for all users and not only for the current user.</td>
-        <td><span style="color:red">Fail</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Reply Downvote button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button toggle the user's upvote.<br>Score is updated by -1.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.<br>Button selection is not working correctly. Button stay selected/unselected for all users and not only for the current user.</td>
-        <td><span style="color:red">Fail</span></td>
-    </tr>
-</table>
-
-
-#### Ask Question Page
-
-<table>
-    <tr>
-        <th colspan=2>Feature</th>
-        <th>Users</th>
-        <th>Test</th>
-        <th>Outcome</th>
-        <th>Pass/Fail</th>
-    </tr>
-    <tr>
-        <td rowspan=8>Question Form</td>
-        <td rowspan=2>Title input</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Text can be entered in the field.<br>Validation occurs if field is left empty</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Focus effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Content input</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Summernote editor display correctly.<br>Text can be entered in the field.<br>Unable to validate when field is left empty. Unable to submit if this happens as form is invalid.</td>
-        <td><span style="color:red">Fail</span></td>
     </tr>
     <tr>
         <td>Style</td>
@@ -1059,20 +614,8 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
-        <td rowspan=2>Submit button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button submit the form and redirects to the Home page.<br>Submit question if valid.<br>Display message if the form submits successfully or not.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Cancel button</td>
-        <td rowspan=2>Registered</td>
+        <td rowspan=2>Back button</td>
+        <td rowspan=2>All</td>
         <td>Functionality</td>
         <td>Clicking the button redirects to the Home page.</td>
         <td><span style="color:green">Pass</span></td>
@@ -1082,10 +625,35 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td>Hover effect working as expected.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
+    <tr>
+        <td rowspan=2>Post Comment field</td>
+        <td rowspan=2>Registered</td>
+        <td>Functionality</td>
+        <td>Text can be entered in the field.<br>Unable to submit when field is left empty.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Styled as table form.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td rowspan=2>Submit button</td>
+        <td rowspan=2>Registered</td>
+        <td>Functionality</td>
+        <td>Clicking the button submit the form and redirects to the originating page.<br>Display message if the form submits successfully or not</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Hover effect working as expected.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
 </table>
 
 
-#### Leave Reply Page
+
+#### Leave Contact Message Page
 
 <table>
     <tr>
@@ -1096,12 +664,12 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <th>Pass/Fail</th>
     </tr>
     <tr>
-        <td rowspan=6>Reply Form</td>
+        <td rowspan=6>Contact Form</td>
         <td rowspan=2>Body input</td>
         <td rowspan=2>Registered</td>
         <td>Functionality</td>
-        <td>Summernote editor display correctly.<br>Text can be entered in the field.<br>Unable to validate when field is left empty. Unable to submit if this happens as form is invalid.</td>
-        <td><span style="color:red">Fail</span></td>
+        <td>Text can be entered in the field.<br>Unable to submit when field is left empty. Unable to proceed if e-mail field is without @.</td>
+        <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
         <td>Style</td>
@@ -1112,7 +680,45 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td rowspan=2>Submit button</td>
         <td rowspan=2>Registered</td>
         <td>Functionality</td>
-        <td>Clicking the button submit the form and redirects to the originating page.<br>Submit question if valid.<br>Display message if the form submits successfully or not</td>
+        <td>Clicking the button submit the form and redirects to the home page.<br>Display message if the form submits successfully or not</td>
+        <td><span style="color:red">Fail</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Hover effect working as expected.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+</table>
+
+
+#### Edit Content Page
+
+<table>
+    <tr>
+        <th colspan=2>Feature</th>
+        <th>Users</th>
+        <th>Test</th>
+        <th>Outcome</th>
+        <th>Pass/Fail</th>
+    </tr>
+    <tr>
+        <td rowspan=6>Content Edit</td>
+        <td rowspan=2>Content input</td>
+        <td rowspan=2>Author</td>
+        <td>Functionality</td>
+        <td>Summernote editor display correctly.<br>Text in the fields is being prepopulated correctly.<br>Text can be edited.<br>Fields can be left empty as per model settings.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Summernote fields working as expected.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td rowspan=2>Update button</td>
+        <td rowspan=2>Author</td>
+        <td>Functionality</td>
+        <td>Clicking the button submit the form and redirects to the Home page.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -1121,8 +727,8 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
-        <td rowspan=2>Cancel button</td>
-        <td rowspan=2>Registered</td>
+        <td rowspan=2>Back to Content button</td>
+        <td rowspan=2>Author</td>
         <td>Functionality</td>
         <td>Clicking the button redirects to the Home page.</td>
         <td><span style="color:green">Pass</span></td>
@@ -1135,57 +741,7 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
 </table>
 
 
-#### Edit Question Page
-
-<table>
-    <tr>
-        <th colspan=2>Feature</th>
-        <th>Users</th>
-        <th>Test</th>
-        <th>Outcome</th>
-        <th>Pass/Fail</th>
-    </tr>
-    <tr>
-        <td rowspan=6>Question Form</td>
-        <td rowspan=2>Title input</td>
-        <td rowspan=2>All</td>
-        <td>Functionality</td>
-        <td><br>Text in the field is being prepopulated correctly.<br>Text can be edited.<br>Validation occurs if field is left empty</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Focus effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Content input</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Summernote editor display correctly.<br>Text in the field is being prepopulated correctly.<br>Text can be edited.<br>Unable to validate when field is left empty. Unable to submit if this happens as form is invalid.</td>
-        <td><span style="color:red">Fail</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Styled correctly by Summernote CSS code.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Submit button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button submit the form and redirects to the Home page.<br>Edit question if form is valid.<br>Display message if the question is edit successfully or not.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-</table>
-
-
-#### Delete Question Page
+#### Delete Content Page
 
 <table>
     <tr>
@@ -1199,21 +755,21 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
     <tr>
         <td rowspan=6>Delete Form</td>
         <td rowspan=2>Question Title</td>
-        <td rowspan=2>Registered</td>
+        <td rowspan=2>Author</td>
         <td>Functionality</td>
         <td>Question title renders correctly.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
         <td>Style</td>
-        <td>N/A</td>
-        <td>N/A</td>
+        <td>Crispy form</td>
+        <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
-        <td rowspan=2>Yes button</td>
-        <td rowspan=2>Registered</td>
+        <td rowspan=2>Delete Content button</td>
+        <td rowspan=2>Author</td>
         <td>Functionality</td>
-        <td>Clicking the button submit the form and redirects to the Home page.<br>Question get deleted.<br>Display message if the question is deleted successfully or not.</td>
+        <td>Clicking the button submit the form and redirects to the Home page.<br>Content gets deleted.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -1222,48 +778,10 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
-        <td rowspan=2>No button</td>
-        <td rowspan=2>Registered</td>
+        <td rowspan=2>Back button</td>
+        <td rowspan=2>Author</td>
         <td>Functionality</td>
-        <td>Clicking the button redirects to the Home page without deleting the question.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Hover effect working as expected.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-</table>
-
-
-#### Edit Reply Page
-
-<table>
-    <tr>
-        <th colspan=2>Feature</th>
-        <th>Users</th>
-        <th>Test</th>
-        <th>Outcome</th>
-        <th>Pass/Fail</th>
-    </tr>
-    <tr>
-        <td rowspan=4>Reply Form</td>
-        <td rowspan=2>Content input</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Summernote editor display correctly.<br>Text in the field is being prepopulated correctly.<br>Text can be edited.<br>Unable to validate when field is left empty. Unable to submit if this happens as form is invalid.</td>
-        <td><span style="color:red">Fail</span></td>
-    </tr>
-    <tr>
-        <td>Style</td>
-        <td>Styled correctly by Summernote CSS code.</td>
-        <td><span style="color:green">Pass</span></td>
-    </tr>
-    <tr>
-        <td rowspan=2>Submit button</td>
-        <td rowspan=2>Registered</td>
-        <td>Functionality</td>
-        <td>Clicking the button submit the form and redirects to the originating page.<br>Edit question if form is valid.<br>Display message if the reply is edit successfully or not.</td>
+        <td>Clicking the button redirects to the Home page without deleting the content.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -1274,7 +792,7 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
 </table>
 
 
-#### Delete Reply Page
+#### Edit Post Page
 
 <table>
     <tr>
@@ -1285,11 +803,23 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <th>Pass/Fail</th>
     </tr>
     <tr>
-        <td rowspan=4>Delete Form</td>
-        <td rowspan=2>Yes button</td>
-        <td rowspan=2>Registered</td>
+        <td rowspan=6>Post Edit</td>
+        <td rowspan=2>Post input</td>
+        <td rowspan=2>Author</td>
         <td>Functionality</td>
-        <td>Clicking the button submit the form and redirects to the originating page.<br>Reply gets deleted.<br>Display message if the reply is deleted successfully or not.</td>
+        <td>Summernote editor display correctly.<br>Text in the fields is being prepopulated correctly.<br>Text can be edited.<br>Fields can be left empty as per model settings.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Summernote fields working as expected.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td rowspan=2>Update button</td>
+        <td rowspan=2>Author</td>
+        <td>Functionality</td>
+        <td>Clicking the button submit the form and redirects to the Home page.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -1298,10 +828,61 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
-        <td rowspan=2>No button</td>
-        <td rowspan=2>Registered</td>
+        <td rowspan=2>Back to Content button</td>
+        <td rowspan=2>Author</td>
         <td>Functionality</td>
-        <td>Clicking the redirects to the originating page without deleting the reply.</td>
+        <td>Clicking the button redirects to the Home page.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Hover effect working as expected.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+</table>
+
+
+#### Delete Post Page
+
+<table>
+    <tr>
+        <th colspan=2>Feature</th>
+        <th>Users</th>
+        <th>Test</th>
+        <th>Outcome</th>
+        <th>Pass/Fail</th>
+    </tr>
+    <tr>
+    <tr>
+        <td rowspan=6>Delete Form</td>
+        <td rowspan=2>Question Title</td>
+        <td rowspan=2>Author</td>
+        <td>Functionality</td>
+        <td>Question title renders correctly.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Crispy form</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td rowspan=2>Delete Post button</td>
+        <td rowspan=2>Author</td>
+        <td>Functionality</td>
+        <td>Clicking the button submit the form and redirects to the Home page.<br>Content gets deleted.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td>Style</td>
+        <td>Hover effect working as expected.</td>
+        <td><span style="color:green">Pass</span></td>
+    </tr>
+    <tr>
+        <td rowspan=2>Back button</td>
+        <td rowspan=2>Author</td>
+        <td>Functionality</td>
+        <td>Clicking the button redirects to the Home page without deleting the content.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -1461,3 +1042,17 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
         <td><span style="color:green">Pass</span></td>
     </tr>
 </table>
+
+
+
+## Security Testing
+
+* Site users are able to register an account in order to interact with the content.
+
+* User can't select the author, he is author by default.
+
+* Update/Delete content/post are not accessible via browser if you are not the author.
+
+* Users can update/delete only the posts/content they have created.
+
+* Users can't make a draft of the Post - to keep the system and database cleaner.

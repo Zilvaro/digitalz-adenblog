@@ -32,27 +32,12 @@ The working version of the Digitals-AdenWell app can be found [here](https://dig
       - [Things, left "for next Iteration"](#things-left-for-next-iteration)
     - [Stages](#stages)
       - [Ideation, prioritization and planning](#ideation-prioritization-and-planning)
-      - [User Stories](#user-stories)
-    - [Structure](#structure)
       - [Database Model](#database-model)
-    - [Skeleton](#skeleton)
-      - [Wireframes](#wireframes)
     - [Surface](#surface)
       - [Color Scheme](#color-scheme)
       - [Typography](#typography)
-  - [Features](#features)
+  - [Features - Finished Product](#features---finished-product)
     - [General](#general)
-    - [Home Page](#home-page)
-    - [About Page](#about-page)
-    - [Search Results Page](#search-results-page)
-    - [Question Detail Page](#question-detail-page)
-    - [Ask Question Page](#ask-question-page)
-    - [Leave Reply Page](#leave-reply-page)
-    - [Edit Question Page](#edit-question-page)
-    - [Delete Question Page](#delete-question-page)
-    - [Edit Reply Page](#edit-reply-page)
-    - [Delete Reply Page](#delete-reply-page)
-    - [Authentication Pages](#authentication-pages)
   - [Technologies Used](#technologies-used)
     - [Languages Used](#languages-used)
     - [Libraries and Frameworks](#libraries-and-frameworks)
@@ -158,6 +143,8 @@ The current webdesign of AdenWellness [here](https://adenwell.com/) was reviewed
 
 * Responsive design
 
+* Header, footer and navigation bar are consistent through all pages.
+
 * Account registration
 
 * Create, edit and delete content from fron-ent, not only from admin module
@@ -171,47 +158,57 @@ The current webdesign of AdenWellness [here](https://adenwell.com/) was reviewed
 * No link (at the moment) to external sorces : Amazon, e-commerce, etc.
 
 
-As a outcome - simple sketch of structure was drawn. 
+As a outcome - simple sketch of structure was drawn and defined **3 phases** of the software development. 
 
-**Second Phase**
+* **!** - content is created by the user either by upload of image or made using CRUD functionality & Summernote directly from the front-end.
+![Digitalz Aden website map](assets/readme_files/digitalz_aden_wire_flow.jpg)
+![Digitalz Aden balsamiq - desktop](assets/readme_files/aden-home-balsamiq-desktop.jpg)
+![Digitalz Aden balsamiq - mobile](assets/readme_files/aden-home-balsamiq-mobile.png)
 
-* Ability to add profile picture
+* 3 phases of software development were defined as projects with unique User Stories and Tasks
+![Digitalz Aden projects](assets/readme_files/projects-list.JPG)
 
-* 
-
-* Add tags to the questions
-
-
-#### User Stories
 
 GitHub projects was used as my project management tool to track user stories. Using a Kanban board helped to focus on specific tasks and track the project progress.
 
-**Start**
-![User Stories Progress - Start](assets/readme_files/user_stories_start.png)
+**Second Phase**
 
-**Week 1**
-![User Stories Progress - Week 1](assets/readme_files/user_stories_week1.png)
+Second phase was to create the full CRUD functionality for 'blog-posts' that in real life would serve as promotional, informational pieces. 
 
-**Week 2**
-![User Stories Progress - Week 2](assets/readme_files/user_stories_week2.png)
+* Create, read, update and delete posts as author
+* Leave comment
+* Like/Unlike the post
 
-**Week 3**
-![User Stories Progress - Week 3](assets/readme_files/user_stories_week3.png)
+![Digitalz Aden post-project](assets/readme_files/aden-blog-userstories-project.JPG)
 
 
-### Structure
+**Third Phase**
 
-The website has been organized in a Hierarchical Tree Structure to ensure the site user navigates through the site effortlessly and intuitively. Here you can you can find the website map design.
+Third phase was to create the full CRUD functionality for 'content' pieces that in real life would serve as company's representative area. 
 
-![Digitalz Aden website map](assets/readme_files/sitemap.jpg)
+* Create, read, update and delete content as author
+* Create variety of designs through multiple Summernote fields
+* Manage drafts
+* Change placement, size and template of the content 
 
-* Header, footer and navigation bar are consistent through all pages.
+![Digitalz Aden content-project](assets/readme_files/content-core-users-stories.JPG)
 
-* Links and forms provide clear feedback to the site user.
 
-* The opportunity to add additional content to the website is provided for the site user once they register an account.
+**Fourth Phase**
 
-* A 404-error page is available.
+To make sure most relevant testing is performed, Fourth phase was to create to list the testing and deployment tasks. 
+
+* User Stories testing
+* Manual testing
+* W3C HTML CSS, PEP8, JSHints, Lighthouse
+* TestCase automated
+* Security testing
+* Deployment to Heroku
+
+![Digitalz Aden testing-project](assets/readme_files/testing-deployment-tasks-project.JPG)
+
+![Digitalz Aden post-project](assets/readme_files/aden-blog-userstories-project.JPG)
+
 
 
 #### Database Model
@@ -267,22 +264,6 @@ The database model has been designed using [drawsql](https://drawsql.app/). The 
 * Reply: A foreign key from the Reply model, storing the question being voted.
 
 
-### Skeleton
-
-#### Wireframes
-
-[Balsamiq](https://balsamiq.com/) has been used to showcase the appearance of the site and display the placement of the different elements whitin the pages.
-
-Page | Desktop Version | Mobile Version
---- | --- | ---
-Index / User Logged Out | ![Desktop index / user logged out wireframe image](assets/wireframes/index_dektop_logged_out.png) | ![Mobile index / user logged out wireframe image](assets/wireframes/index_mobile_logged_out.png)
-Sign Up | ![Desktop sign up wireframe image](assets/wireframes/signup_dektop.png) | ![Mobile sign up wireframe image](assets/wireframes/signup_mobile.png)
-Log In | ![Desktop log in wireframe image](assets/wireframes/login_dektop.png) | ![Mobile log in wireframe image](assets/wireframes/login_mobile.png)
-Index / User Logged In | ![Desktop index / user logged in wireframe image](assets/wireframes/index_dektop_logged_in.png) | ![Mobile index / user logged out wireframe image](assets/wireframes/index_mobile_logged_in.png)
-Ask Question | ![Desktop ask question wireframe image](assets/wireframes/ask_question_desktop.png) | ![Mobile ask question wireframe image](assets/wireframes/ask_question_mobile.png)
-Open Question | ![Desktop open question wireframe image](assets/wireframes/question_dektop.png) | ![Mobile open question wireframe image](assets/wireframes/question_mobile.png)
-Leave Reply | ![Desktop leave reply wireframe image](assets/wireframes/leave_reply_desktop.png) | ![Mobile leave reply wireframe image](assets/wireframes/leave_reply_mobile.png)
-
 
 ### Surface
 
@@ -301,10 +282,10 @@ The main font being used in the site is Segoe UI with occasional introduction of
 
 Segoe UI was chosen after refresher-research on fonts that are better for reading, however Segoe UI has proven to be font-of-choice for a few years in app development.
 
-[Back to top ⇧](#code-buddy)
+[Back to top ⇧](#digitalz-aden)
 
 
-## Features
+## Features - Finished Product
 
 ### General
 
@@ -324,94 +305,20 @@ Segoe UI was chosen after refresher-research on fonts that are better for readin
     * The footer includes a logo and link to social media channels (hidden while waiting for Aden Wellness approval to use).
 
 
-### Home Page
-
-* Question list
-![Digitalz Aden Question List image](assets/readme_files/code_buddy_question_list.png)
-
-    * Display a paginated list of all the question and its relevant information for the user to identify.
-
-    * Provide the Site User with a link to the detailed question.
-
-    * Question score as well as voting possibilities for registered users is provided next to the question.
-
-    * For registered users, a Ask Question button is provided to allow the user to access the Ask Question Page to create new questions.
-
-    * Edit and Question buttons are provided for the questions the registered Site User has created.
-
-
-### About Page
-
-![Digitalz Aden About Page image](assets/readme_files/code_buddy_about.png)
-
-* Provide relevant information about the website's objective.
-
-
-### Search Results Page
-![Digitalz Aden About Page image](assets/readme_files/code_buddy_search_results.png)
-
-* Display information about the Search being handled
-
-* Display a paginated list of the questions matching the search and its relevant information for the user to identify.
-
-
-### Question Detail Page
-![Digitalz Aden Question Detail Page image](assets/readme_files/code_buddy_question_detail.png)
-
-* Display the full question a well as a list of its replies.
-
-* Question and reply scores as well as voting possibilities for registered users is provided next to each item.
-
-* For registered users, a Leave Reply button is provided to allow the user to access the Leave Reply page to create a new reply to the question.
-
- * Edit and Question buttons are provided for the questions and replies the registered Site User has created.
-
-
-### Ask Question Page
-![Digitalz Aden Ask Question Page](assets/readme_files/code_buddy_ask_question.png)
-
-* Provide a form to allow registered Site Users to create a new question.
-
-### Leave Reply Page
-![Digitalz Aden Leave Reply Page](assets/readme_files/code_buddy_leave_reply.png)
-
-* Provide a form to allow registered Site Users to create a new reply to the questions.
-
-
-### Edit Question Page
-![Digitalz Aden Edit Question Page](assets/readme_files/code_buddy_edit_question.png)
-
-* Provide a prepopulated form to allow the Site User to edit a question they created.
-
-
-### Delete Question Page
-![Digitalz Aden Edit Question Page](assets/readme_files/code_buddy_delete_question.png)
-
-* Provide a form to allow the Site User to delete a question they created.
-
-
-### Edit Reply Page
-![Digitalz Aden Edit Question Page](assets/readme_files/code_buddy_edit_reply.png)
-
-* Provide a prepopulated form to allow the Site User to edit a reply they created.
-
-
-### Delete Reply Page
-![Digitalz Aden Edit Question Page](assets/readme_files/code_buddy_delete_reply.png)
-
-* Provide a form to allow the Site User to delete a reply they created.
-
-
-### Authentication Pages
-
-Page | Purpose | Image |
+Page | Desktop | Mobile |
 --- | --- | --- |
-Register | Allow the Site User to sign up an account for the website. | ![Digitalz Aden Sign Up Page](assets/readme_files/code_buddy_sing_up.png) |
-Login | Allow the Site User to sign in with their account. | ![Digitalz Aden Sign In Page](assets/readme_files/code_buddy_sign_in.png) |
-Logout | Allow the Site User to sign out from their account. | ![Digitalz Aden Sign Out Page](assets/readme_files/code_buddy_sign_out.png) |
+| Home | ![Desktop Home Page image](assets/readme_files/home-desktop.jpg) | ![Mobile Home Page image ](assets/readme_files/home-mobile.jpg) |
+| Content | ![Desktop Content Page image](assets/readme_files/content-desktop.JPG) | ![Mobile Content Page image](assets/readme_files/content-mobile.jpg) |
+| Post | ![Desktop Post Page image](assets/readme_files/post-desktop.jpg) | ![Mobile Post Page image](assets/readme_files/post-mobile.jpg) |
+| Contact |![Desktop Contact Page image](assets/readme_files/contact-desktop.JPG) | ![Mobile Contact Page image](assets/readme_files/contact-mobile.JPG) |
+| Register |![Desktop Register Page image](assets/readme_files/register-desktop.JPG) | ![Mobile Register Page image](assets/readme_files/register-mobile.JPG) |
+| Log-in |![Desktop Log-in Page image](assets/readme_files/login-desktop.JPG) | ![Mobile Log-in Page image](assets/readme_files/login-mobile.JPG) |
+| Log-out | ![Desktop Log-out Page image](assets/readme_files/logout-mobile.JPG) | ![Mobile Log-out Page image](assets/readme_files/logout-mobile.JPG) |
 
 
-[Back to top ⇧](#code-buddy)
+[Back to top ⇧](#welcome)
+
+
 
 
 ## Technologies Used
@@ -508,13 +415,13 @@ Logout | Allow the Site User to sign out from their account. | ![Digitalz Aden S
 * [Favicon.cc](https://www.favicon.cc/) 
     * Favicon.cc was used to create the site favicon.
 
-[Back to top ⇧](#code-buddy)
+[Back to top ⇧](#digitalz-aden)
 
 ## Testing
 
 The testing documentation can be found [here](https://github.com/Zilvaro/digitalz-adenblog/blob/main/TESTING.md#digitalz-adenblog-testing).
 
-[Back to top ⇧](#code-buddy)
+[Back to top ⇧](#digitalz-aden)
 
 ## Deployment
 
@@ -559,7 +466,7 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
 1. Log into [GitHub](https://github.com/login) or [create an account](https://github.com/join).
-2. Locate the [GitHub Repository](https://github.com/josswe26/code-buddy).
+2. Locate the [GitHub Repository](https://github.com/josswe26/digitalz-aden).
 3. At the top of the repository, on the right side of the page, select "Fork"
 4. You should now have a copy of the original repository in your GitHub account.
 
@@ -568,21 +475,21 @@ How to run this project locally:
 1. Install the [GitPod Browser](https://www.gitpod.io/docs/browser-extension/ "Link to Gitpod Browser extension download") Extension for Chrome.
 2. After installation, restart the browser.
 3. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
-2. Locate the [GitHub Repository](https://github.com/josswe26/code-buddy).
+2. Locate the [GitHub Repository](https://github.com/josswe26/digitalz-aden).
 5. Click the green "GitPod" button in the top right corner of the repository.
 This will trigger a new gitPod workspace to be created from the code in github where you can work locally.
 
 How to run this project within a local IDE, such as VSCode:
 
 1. Log into [GitHub](https://github.com/login) or [create an account](https://github.com/join).
-2. Locate the [GitHub Repository](https://github.com/josswe26/code-buddy).
+2. Locate the [GitHub Repository](https://github.com/josswe26/digitalz-aden).
 3. Under the repository name, click "Clone or download".
 4. In the Clone with HTTPs section, copy the clone URL for the repository.
 5. In your local IDE open the terminal.
 6. Change the current working directory to the location where you want the cloned directory to be made.
 7. Type 'git clone', and then paste the URL you copied in Step 3.
 ```
-git clone https://github.com/josswe26/code-buddy
+git clone https://github.com/josswe26/digitalz-aden
 ```
 8. Press Enter. Your local clone will be created.
 
@@ -590,7 +497,7 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 
 
-[Back to top ⇧](#code-buddy)
+[Back to top ⇧](#digitalz-aden)
 
 ## Finished Product
 
@@ -605,7 +512,7 @@ Page | Desktop | Mobile |
 | Log-out | ![Desktop Log-out Page image](assets/readme_files/logout-mobile.JPG) | ![Mobile Log-out Page image](assets/readme_files/logout-mobile.JPG) |
 
 
-[Back to top ⇧](#code-buddy)
+[Back to top ⇧](#digitalz-aden)
 
 ## Credits
 
@@ -630,7 +537,7 @@ Page | Desktop | Mobile |
 
 * Message implementation an dismissal code is taken from [Code Institute](https://codeinstitute.net/)'s django-blog project.
 
-[Back to top ⇧](#code-buddy)
+[Back to top ⇧](#digitalz-aden)
 
 ## Known Bugs
 
@@ -640,7 +547,7 @@ Page | Desktop | Mobile |
 
 * A known issue with Summernote field validation is present in the project. An invalid form will be posted if the field is empty. A message will however be displayed, informing the user that there has been a problem with the submission.
 
-[Back to top ⇧](#code-buddy)
+[Back to top ⇧](#digitalz-aden)
 
 ## Acknowledgements
 
@@ -652,4 +559,4 @@ Page | Desktop | Mobile |
 
 * Code Institute and its amazing Slack community for their support and providing me with the necessary knowledge to complete this project.
 
-[Back to top ⇧](#code-buddy)
+[Back to top ⇧](#digitalz-aden)
