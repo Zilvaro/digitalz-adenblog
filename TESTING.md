@@ -219,21 +219,30 @@ W3C CSS Validator found no errors or warnings on my CSS.
 
 Pylint was used continuously during the development process to analyze the Python code for programming errors.
 
-[PEP8 online](http://pep8online.com/) was further used to validate the Python code to validate the Python code for PEP8 requirements. See below the validation results and the reviewed results. 
+[PEP8 online](https://pep8online.com/) was further used to validate the Python code to validate the Python code for PEP8 requirements. See below the validation results and the reviewed results. 
 
 
 | Location | Errors / Warnings | Code Reviewed |
 | --- | --- | --- |
-| ./question/admin.py | No errors / warnings |![admin.py code reviewed image](assets/testing_files/pep8_admin.png) |
-| ./question/forms.py | ![forms.py errors/warnings image](assets/testing_files/pep8_forms_errors.png) | ![forms.py code reviewed image](assets/testing_files/pep8_forms_reviewed.png) |
-| ./question/models.py | ![models.py errors/warnings image](assets/testing_files/pep8_models_errors.png) | ![models.py code reviewed image](assets/testing_files/pep8_models_reviewed.png) |
-| ./question/urls.py | ![urls.py errors/warnings image](assets/testing_files/pep8_urls_errors.png) | ![urls.py code reviewed image](assets/testing_files/pep8_urls_reviewed.png) |
-| ./question/views.py | ![views.py errors/warnings image](assets/testing_files/pep8_views_errors.png) | ![views.py code reviewed image](assets/testing_files/pep8_views_reviewed.png) |
+| ./blog/admin.py | No errors / warnings |![admin.py code reviewed image](assets/testing_files/PEP8-online-admin-py.JPG) |
+| ./blog/forms.py | No errors / warnings |![forms.py code reviewed image](assets/testing_files/PEP8-online-forms-py.JPG) |
+| ./blog/models.py | No errors / warnings |![models.py code reviewed image](assets/testing_files/PEP8-online-models-py.JPG) |
+| ./blog/urls.py | No errors / warnings |![urls.py code reviewed image](assets/testing_files/PEP8-online-urls-py.JPG) |
+| ./blog/views.py | No errors / warnings |![views.py code reviewed image](assets/testing_files/PEP8-online-views-py.JPG) |
 
 
 ### JavaScript
 
 [JSHints JavaScript Code Quality Tool](https://jshint.com/) was used to validate the site's JavaScript code. 
+
+<script>
+    var name = "{{ user.id }}";
+    var show = 1;
+    document.getElementById("poster").value
+        = name;
+    document.getElementById("status_id").value
+        = show;
+</script>
 
 No errors were found.
 
@@ -1038,8 +1047,28 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 * User can't select the author, he is author by default.
 
+A little JavaScript was included to input the logged-in user as author in Content & Post creation form and then the drop-down selection option was removed from 'author' field and the field itself was hidden. 
+
+<script>
+    var name = "{{ user.id }}";
+    document.getElementById("writer").value
+        = name;
+</script>
+
+
 * Update/Delete content/post are not accessible via browser if you are not the author.
 
 * Users can update/delete only the posts/content they have created.
 
 * Users can't make a draft of the Post - to keep the system and database cleaner.
+
+Extra JavaScript code was added to populate STATUS field with Published and the field itself was 'hidden' from the Add Post Form.
+
+<script>
+    var name = "{{ user.id }}";
+    var show = 1;
+    document.getElementById("poster").value
+        = name;
+    document.getElementById("status_id").value
+        = show;
+</script>

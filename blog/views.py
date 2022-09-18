@@ -1,20 +1,20 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic, View 
+from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from .models import Post, HeroContent, ContactMessage 
+from .models import Post, HeroContent, ContactMessage
 from .forms import CommentForm, AddPostForm, ContactForm, AddContentForm
 
 
 class PostList(generic.TemplateView):
     template_name = 'index.html'
-    
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['blog_content'] = Post.objects.all()
         context['hero_content'] = HeroContent.objects.all()
         return context
-        
+
 
 class PostDetail(View):
 
@@ -69,8 +69,9 @@ class PostDetail(View):
             },
         )
 
+
 class PostLike(View):
-    
+
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -117,17 +118,13 @@ class ContactView(generic.CreateView):
     fields = ('first_name', 'last_name', 'email', 'contact_message')
 
 
-#def heroview(request):
-#   return render(request, 'hero_detail.html')
-
-
 class HeroContentDetail(generic.DetailView):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = HeroContent.objects.filter(status=1)
-        
+
         content = get_object_or_404(queryset, slug=slug)
-        
+
         return render(
             request,
             "hero_detail.html",
@@ -158,7 +155,7 @@ class DeleteContentView(generic.DeleteView):
 
 class DraftList(generic.TemplateView):
     template_name = 'draft_content.html'
-    
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['hero_content'] = HeroContent.objects.all()

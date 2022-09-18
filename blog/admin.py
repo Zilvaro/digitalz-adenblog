@@ -23,7 +23,7 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
 
-       
+
 @admin.register(HeroContent)
 class HeroContentAdmin(SummernoteModelAdmin):
 
@@ -39,5 +39,3 @@ class ContactsAdmin(SummernoteModelAdmin):
 
     list_display = ('first_name', 'last_name', 'email', 'contact_message')
     search_fields = ['first_name', 'last_name', 'email']
-    
-    
