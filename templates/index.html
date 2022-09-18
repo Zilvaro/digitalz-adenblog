@@ -16,7 +16,7 @@
                                 {% if "placeholder" in content.hero_featured_image.url %}
                                 <img class="card-img hero-image" style="height:{{ content.image_height }}vw"
                                     src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"
-                                    alt="relaxing image">
+                                    alt="relaxing image"/>
                                 {% else %}
                                 <span class="d-block d-sm-none">
                                     <img class="card-img hero-image" src="{{ content.hero_featured_image.url }}"
@@ -30,14 +30,14 @@
                                     {% if content.text_background == 2 %}
                                     <div class="row darker-bg">
                                         <div class="col-12 left">
-                                            <h1 class="card-title display-1">{{ content.hero_header | safe }}</h1>
-                                            <p class="card-text">{{ content.hero_excerpt | safe }}</p>
+                                            <div class="card-text">{{ content.hero_header | safe }}</div>
+                                            <div class="card-text">{{ content.hero_excerpt | safe }}</div>
                                         </div>
                                     </div>
                                     {% else %}
                                     <div class="col-12 left">
-                                        <h1 class="card-title display-1">{{ content.hero_header | safe }}</h1>
-                                        <p class="card-text">{{ content.hero_excerpt | safe }}</p>
+                                        <div class="card-text">{{ content.hero_header | safe }}</div>
+                                        <div class="card-text">{{ content.hero_excerpt | safe }}</div>
                                     </div>
                                     {% endif %}
                                 </div>
@@ -59,7 +59,7 @@
                         <div class="card mb-1">
                             <a href="{% url 'hero_detail' content.slug %}" class="post-link">
                                 <div class="row">
-                                    <div class="col-5 col-md-4"'>
+                                    <div class="col-5 col-md-4">
                                         {% if "placeholder" in content.hero_featured_image.url %}
                                         <img class="rounded float-left img-fluid"
                                             src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"
@@ -78,8 +78,8 @@
                                     </div>
                                     <div class="col-7 col-md-8">
                                         <div>
-                                            <p>{{ content.hero_header | safe }}</p>
-                                            <p style="margin-left:1rem;" >{{ content.hero_excerpt | safe }}</p>
+                                            <div>{{ content.hero_header | safe }}</div>
+                                            <div style="margin-left:1rem;" >{{ content.hero_excerpt | safe }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@
                                 <img class="card-img-top"
                                     src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg" alt="image for the post">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="authors image for the post">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">{{ post.posted_by | safe }}</p>
@@ -148,7 +148,7 @@
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">
+                            <div class="card-text text-muted h6">
                                 {{ post.created_on}}
                                 <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}
@@ -161,7 +161,7 @@
                                             type="button"
                                             class="btn btn-outline-secondary btn-sm">Delete</button></a></small>
                                 {% endif %}
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>
