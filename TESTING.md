@@ -251,22 +251,18 @@ No errors were found.
 
 Lighthouse in Chrome DevTools has been used to confirm that the colors and fonts being used throughout the website are easy to read and accessible. See reports in the table below:
 
-### Lighthouse Reports
+* Main Accessibility gaps are due to external (uncontrollable sizes and ALT) images and content contrasts
+  
 
 Page | Lighthouse Report |
 | --- | --- |
-| Index | ![Index Lighthouse Report](assets/testing_files/lighthouse_index.jpg) |
-| About | ![About Lighthouse Report](assets/testing_files/lighthouse_about.jpg) |
-| Register | ![Register Lighthouse Report](assets/testing_files/lighthouse_signup.jpg) |
-| Login | ![Login Lighthouse Report](assets/testing_files/lighthouse_login.jpg) |
-| Logout | ![Logout Lighthouse Report](assets/testing_files/lighthouse_logout.jpg) |
-| Question Detail !| ![Question Detail Lighthouse Report](assets/testing_files/lighthouse_question_detail.jpg) |
-| Ask Question | ![Ask Question Lighthouse Report](assets/testing_files/lighthouse_ask_question.jpg) |
-| Leave Reply | ![Leave Reply Lighthouse Report](assets/testing_files/lighthouse_leave_reply.jpg) |
-| Edit Question | ![Edit Question Lighthouse Report](assets/testing_files/lighthouse_edit_question.jpg) |
-| Delete Question | ![Delete Question Lighthouse Report](assets/testing_files/lighthouse_delete_question.jpg) |
-| Edit Reply | ![Edit Reply Lighthouse Report](assets/testing_files/lighthouse_edit_reply.jpg) |
-| Delete Reply | ![Delete Reply Lighthouse Report](assets/testing_files/lighthouse_delete_reply.jpg) |
+| Home | ![Home Lighthouse Report](assets/testing_files/lighthouse_home.JPG) |
+| Content | ![Content Lighthouse Report](assets/testing_files/lighthouse_content.JPG) |
+| Post | ![Post Lighthouse Report](assets/testing_files/lighthouse_post.JPG) |
+| Register | ![Register Lighthouse Report](assets/testing_files/lighthouse_register.JPG) |
+| Login | ![Login Lighthouse Report](assets/testing_files/lighthouse_log_in.JPG) |
+| Logout | ![Logout Lighthouse Report](assets/testing_files/lighthouse_sign_out.JPGg) |
+| Contact !| ![Contact Lighthouse Report](assets/testing_files/lighthouse_contact.JPG) |
 
 
 ## Tools Testing

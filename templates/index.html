@@ -135,7 +135,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg">
+                                    src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg" alt="image for the post">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}
@@ -199,6 +199,6 @@
 
 <div class="image-container">
     <img class="card-img-top"
-        src="https://res.cloudinary.com/zilvacloud/image/upload/v1662905005/our_wellness_approach_green_c5yoep.jpg">
+        src="https://res.cloudinary.com/zilvacloud/image/upload/v1662905005/our_wellness_approach_green_c5yoep.jpg" alt="image with company values">
 </div>
 {%endblock%}

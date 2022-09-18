@@ -14,9 +14,10 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                <img src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"
+                alt="relaxing image" width="100%">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src=" {{ post.featured_image.url }}" alt="post-detail-image" width="100%">
                 {% endif %}
             </div>
         </div>
@@ -61,10 +62,10 @@
                     </div>
                     {% if user.is_authenticated and user == post.author %}
                     <a class="nav-link" aria-current="page" href="{% url 'update_post' post.slug %}">
-                        <h4 class="btn btn-outline-secondary btn-sm">Update Post</h4></a>
+                        <h4 class="btn btn-outline-secondary btn-sm" name="update-post">Update Post</h4></a>
                     {% endif %}
                     <a class="nav-link" aria-current="page" href="{% url 'home' %}">
-                            <h4 class="btn btn-secondary">Back to Posts</h4></a>
+                            <h4 class="btn btn-secondary" name="back-to-postlist">Back to Posts</h4></a>
                 </div>
             </div>
         </div>
@@ -81,7 +82,7 @@
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold">
+                    <p class="font-weight-bold" name="comments-list">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
@@ -110,7 +111,7 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-signup btn-lg" name="submit">Submit</button>
                 </form>
                 {% endif %}
                 {% endif %}
