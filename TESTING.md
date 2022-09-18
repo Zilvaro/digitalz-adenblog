@@ -1043,32 +1043,55 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 ## Security Testing
 
-* Site users are able to register an account in order to interact with the content.
+1. Site users are able to register an account in order to interact with the content.
 
-* User can't select the author, he is author by default.
+* A clear indication-link on the nav bar.                     
+![Security Registration - link](assets/testing_files/1us-register-account-1.JPG)
 
-A little JavaScript was included to input the logged-in user as author in Content & Post creation form and then the drop-down selection option was removed from 'author' field and the field itself was hidden. 
+* Controlled form to fill-in data.
+![Scurity Registration - form](assets/testing_files/1us-register-account-2.JPG)
 
+* Confirmation about signing-in and greeting.
+![Security Registration - confirmation](assets/testing_files/1us-register-account-3.jpg)
+
+* New-user data is visible and manageable in admin-backend.
+![Security Registration - admin](assets/testing_files/1us-register-account-4.JPG)
+
+
+
+2. User can't select the author, he is author by default.
+
+* A little JavaScript was included to input the logged-in user as author in Content & Post creation form and then the drop-down selection option was removed from 'author' field and the field itself was hidden. 
+
+```
 <script>
     var name = "{{ user.id }}";
     document.getElementById("writer").value
         = name;
 </script>
+```
+
+* ![Security author - fixed](assets/testing_files/security-author-is-hidden.JPG)
 
 
-* Update/Delete content/post are not accessible via browser if you are not the author.
 
-* Users can update/delete only the posts/content they have created.
+3. Update/Delete content/post are not accessible via browser if you are not the author.
 
-* Users can't make a draft of the Post - to keep the system and database cleaner.
+4. Users can update/delete only the posts/content they have created.
 
-Extra JavaScript code was added to populate STATUS field with Published and the field itself was 'hidden' from the Add Post Form.
+5. Users can't make a draft of the Post - to keep the system and database cleaner.
 
+* Extra JavaScript code was added to populate STATUS field with Published and the field itself was 'hidden' from the Add Post Form.
+
+```
 <script>
-    var name = "{{ user.id }}";
-    var show = 1;
-    document.getElementById("poster").value
+   var name = "{{ user.id }}";
+   var show = 1;
+   document.getElementById("poster").value
         = name;
     document.getElementById("status_id").value
         = show;
 </script>
+```
+
+* ![Security post status - fixed](assets/testing_files/security-status-post-hidden.jpg)

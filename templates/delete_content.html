@@ -5,7 +5,7 @@
 {% block content %}
 
 
-{% if user.is_authenticated and user.name == author or user.name == admin %}
+{% if user.is_authenticated and user == author %}
 
 <div class="container">
     <div class="row">
