@@ -32,7 +32,7 @@ The working version of the Digitals-AdenWell app can be found [here](https://dig
       - [Things, left "for next Iteration"](#things-left-for-next-iteration)
     - [Stages](#stages)
       - [Ideation, prioritization and planning](#ideation-prioritization-and-planning)
-      - [Database Model](#database-model)
+      - [Database Models](#database-models)
     - [Surface](#surface)
       - [Color Scheme](#color-scheme)
       - [Typography](#typography)
@@ -134,6 +134,7 @@ In effect, Digitalz-Adenwell is a business presentation and customer engagement 
 
 
 ### Stages
+[Go to the top](#table-of-contents)
 
 The Planning & Execution of DigitalZ-Aden project was in 4 distinct phases: 
 
@@ -211,61 +212,80 @@ To make sure most relevant testing is performed, Fourth phase was to create to l
 
 
 
-#### Database Model
+#### Database Models
 
-The database model has been designed using [drawsql](https://drawsql.app/). The type of database being used for the is relational database being managed using [PostgreSQL](https://www.postgresql.org/).
+The database model has been designed and managed using [PostgreSQL](https://www.postgresql.org/).
 
-![Digitalz Aden website map](assets/readme_files/db_model.png)
+1. **POST Model**
 
-**Question Model**
+* title = models.CharField()
+* slug = models.SlugField()
+* author = models.ForeignKey(User)
+* posted_by = models.TextField()
+* order = models.IntegerField(**defines the place in relation to other posts**)
+* featured_image = CloudinaryField()
+* excerpt = models.TextField()
+* updated_on = models.DateField()
+* content = models.TextField()
+* created_on = models.DateField()
+* status = models.IntegerField()
+* likes = models.ManyToManyField()
 
-* Title: Unique question title provided by the author.
 
-* Author: Store the author of the question as a User foreign key.
+2. **Comment Model**
 
-* Content: Question details provided by the author.
+* post = models.ForeignKey(Post)
+* name = models.CharField()
+* email = models.EmailField()
+* body = models.TextField()
+* created_on = models.DateTimeField()
+* approved = models.BooleanField(default=False)
 
-* Slug: Store a unique slug to identify the question by.
 
-* Created On: Date and time set automatically at the question's creation.
+3. **HeroContent Model**
 
-* Last updated: Date and time set automatically every time the question is updated.
+* hero_title = models.CharField()
+* slug = models.SlugField()
+* author = models.ForeignKey(User)
+* hero_featured_image = CloudinaryField()
+* image_alt_text = models.CharField(**text automatically placed in html to increase accessibility**)
+* hero_header = models.CharField(**summernote field that creates higher impact than title**)
+* text_background = models.IntegerField(**shade of grey to increase the header text visibility on light images**)
+* hero_excerpt = models.TextField()
+* images_on_desktop = models.IntegerField(**number of content cards user wants to see on 1 row on larger screens**)
+* image_height = models.IntegerField(**The height of image in px user wants for images on large screens**)
+* image_place = models.IntegerField(**defines image vs text relationship: image as background or on the side**)
+* image_order = models.IntegerField(**defines the place in relation to other Content cards**)
+* updated_on = models.DateTimeField()
+* hero_content = models.TextField(**another summernote field**)
+* created_on = models.DateTimeField()
+* status = models.IntegerField()
 
-* Votes score: Calculated score of the question's votes.
+!Many of the model fields have a selection option:
 
-**Reply Model**
+* STATUS = ((0, "Draft"), (1, "Published"))
+* IMAGECOUNTMOBILE = ((12, "Whole Page"), (6, "2xPage"))
+* IMAGECOUNTDESKTOP = ((12, "Whole Page"), (8, "2/3 of Page"),
+                     (6, "Half of Page"), (4, "1/3 of Page"),
+                     (3, "1/4 of Page"))
+* IMAGEHEIGHT = ((40, "400px"), (32, "320px"), (27, "270px"), (20, "220px"),
+               (16, "160px"), (8, "88px"), (5, "50px"))
+* IMAGEPLACE = ((1, "Image-as-background"), (2, "Image-on-side"))
+* TEXTBACKGROUND = ((1, "No background"), (2, "Put background"))
 
-* Question: A foreign key from the Question model, storing the question being replied.
 
-* Author: Store the author of the reply as a User foreign key.
+4. **ContactMessage Model**
 
-* Body: Reply body with details provided by the author.
-
-* Created On: Date and time set automatically at the reply's creation.
-
-* Last updated: Date and time set automatically every time the reply is updated.
-
-* Votes score: Calculated score of the reply's votes.
-
-**QuestionVote Model**
-
-* Voter: Foreign key from the User model, storing the user voting the question.
-
-* Score: Score provided by the voter. The options are upvote with a value of 1 or downvote with a value of -1.
-
-* Question: A foreign key from the Question model, storing the question being voted.
-
-**ReplyVote Model**
-
-* Voter: Foreign key from the User model, storing the user voting the reply.
-
-* Score: Score provided by the voter. The options are upvote with a value of 1 or downvote with a value of -1.
-
-* Reply: A foreign key from the Reply model, storing the question being voted.
+* first_name = models.CharField()
+* last_name = models.CharField()
+* email = models.EmailField()
+* contact_message = models.TextField()
+* created_on = models.DateTimeField()
 
 
 
 ### Surface
+[Go to the top](#table-of-contents)
 
 #### Color Scheme
 
@@ -282,10 +302,10 @@ The main font being used in the site is Segoe UI with occasional introduction of
 
 Segoe UI was chosen after refresher-research on fonts that are better for reading, however Segoe UI has proven to be font-of-choice for a few years in app development.
 
-[Back to top ⇧](#digitalz-aden)
 
 
 ## Features - Finished Product
+[Go to the top](#table-of-contents)
 
 ### General
 
@@ -316,12 +336,10 @@ Page | Desktop | Mobile |
 | Log-out | ![Desktop Log-out Page image](assets/readme_files/logout-mobile.JPG) | ![Mobile Log-out Page image](assets/readme_files/logout-mobile.JPG) |
 
 
-[Back to top ⇧](#welcome)
-
-
 
 
 ## Technologies Used
+[Go to the top](#table-of-contents)
 
 ### Languages Used
 
@@ -415,13 +433,12 @@ Page | Desktop | Mobile |
 * [Favicon.cc](https://www.favicon.cc/) 
     * Favicon.cc was used to create the site favicon.
 
-[Back to top ⇧](#digitalz-aden)
 
 ## Testing
+[Go to the top](#table-of-contents)
 
 The testing documentation can be found [here](https://github.com/Zilvaro/digitalz-adenblog/blob/main/TESTING.md#digitalz-adenblog-testing).
 
-[Back to top ⇧](#digitalz-aden)
 
 ## Deployment
 
@@ -497,9 +514,8 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 
 
-[Back to top ⇧](#digitalz-aden)
-
 ## Finished Product
+[Go to the top](#table-of-contents)
 
 Page | Desktop | Mobile |
 --- | --- | --- |
@@ -512,9 +528,9 @@ Page | Desktop | Mobile |
 | Log-out | ![Desktop Log-out Page image](assets/readme_files/logout-mobile.JPG) | ![Mobile Log-out Page image](assets/readme_files/logout-mobile.JPG) |
 
 
-[Back to top ⇧](#digitalz-aden)
 
 ## Credits
+[Go to the top](#table-of-contents)
 
 ### Content
 
@@ -537,7 +553,6 @@ Page | Desktop | Mobile |
 
 * Message implementation an dismissal code is taken from [Code Institute](https://codeinstitute.net/)'s django-blog project.
 
-[Back to top ⇧](#digitalz-aden)
 
 ## Known Bugs
 
@@ -547,7 +562,7 @@ Page | Desktop | Mobile |
 
 * A known issue with Summernote field validation is present in the project. An invalid form will be posted if the field is empty. A message will however be displayed, informing the user that there has been a problem with the submission.
 
-[Back to top ⇧](#digitalz-aden)
+
 
 ## Acknowledgements
 
@@ -559,4 +574,4 @@ Page | Desktop | Mobile |
 
 * Code Institute and its amazing Slack community for their support and providing me with the necessary knowledge to complete this project.
 
-[Back to top ⇧](#digitalz-aden)
+[Go to the top](#table-of-contents)

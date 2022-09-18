@@ -58,8 +58,6 @@
 ![User Stories Comment - stream](assets/testing_files/4us-leave-comment-3.JPG)
 
 
-
-
 ### 5. As a **Site User** I can **like or unlike a post** so that **I can interact with the content**
 
 * 'like' post.            
@@ -67,7 +65,6 @@
 
 * 'unlike' post. 
 ![User Stories LIKE - unlike](assets/testing_files/5us-unlike-post-2.JPG)
-
 
 
 ### 6. As a **Site User** I can **click on a content** so that **I can read more about the topic**
@@ -195,6 +192,7 @@
 
 
 ## Code Validation
+[Go to the top](#table-of-contents)
 
 ### HTML
 
@@ -248,6 +246,7 @@ No errors were found.
 
 
 ## Accessibility
+[Go to the top](#table-of-contents)
 
 Lighthouse in Chrome DevTools has been used to confirm that the colors and fonts being used throughout the website are easy to read and accessible. See reports in the table below:
 
@@ -266,6 +265,7 @@ Page | Lighthouse Report |
 
 
 ## Tools Testing
+[Go to the top](#table-of-contents)
 
 ### [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 
@@ -280,6 +280,7 @@ Chrome DevTools was used during the development process to test, explore and mod
 
 
 ## Manual Testing
+[Go to the top](#table-of-contents)
 
 ### Browser Compatibility
 
@@ -303,6 +304,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 
 ### Test Results
+[Go to the top](#table-of-contents)
 
 #### General
 
@@ -575,6 +577,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 
 #### Content/Post Detail Page
+[Go to the top](#table-of-contents)
 
 <table>
     <tr>
@@ -648,7 +651,6 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 </table>
 
 
-
 #### Leave Contact Message Page
 
 <table>
@@ -688,6 +690,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 
 #### Edit Content Page
+[Go to the top](#table-of-contents)
 
 <table>
     <tr>
@@ -789,6 +792,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 
 #### Edit Post Page
+[Go to the top](#table-of-contents)
 
 <table>
     <tr>
@@ -890,6 +894,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 
 #### Sign Up Page
+[Go to the top](#table-of-contents)
 
 
 <table>
@@ -965,6 +970,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 
 #### Login Page
+[Go to the top](#table-of-contents)
 
 <table>
     <tr>
@@ -1015,6 +1021,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 
 #### Logout Page
+[Go to the top](#table-of-contents)
 
 <table>
     <tr>
@@ -1042,6 +1049,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 
 ## Security Testing
+[Go to the top](#table-of-contents)
 
 1. Site users are able to register an account in order to interact with the content.
 
@@ -1074,10 +1082,21 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 * ![Security author - fixed](assets/testing_files/security-author-is-hidden.JPG)
 
 
-
 3. Update/Delete content/post are not accessible via browser if you are not the author.
 
+* System, before the openning Edit or Delete form (from inside the app or from the copied link) for Post or Content - always checks if the user is logged-in && if user is the author.
+
+* ![Security edit_delete - user logged-in](assets/testing_files/security-status-link-notlogedin.JPG)
+* ![Security edit_delete - user_author](assets/testing_files/security-status-link-logedin.JPG)
+
+
 4. Users can update/delete only the posts/content they have created.
+
+* Edit & Delete buttons for the Post or Content are available only if the user is the aiuthor of those Posts and Content.
+* As a back-up measure, edit & delete forms will open only after user check (see the description above)
+
+* ![Security edit_button-author](assets/testing_files/security-edit-button-author.JPG)
+
 
 5. Users can't make a draft of the Post - to keep the system and database cleaner.
 
@@ -1095,3 +1114,5 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 ```
 
 * ![Security post status - fixed](assets/testing_files/security-status-post-hidden.jpg)
+
+[Go to the top](#table-of-contents)
