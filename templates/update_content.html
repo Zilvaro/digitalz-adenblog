@@ -4,8 +4,8 @@
 
 {% block content %}
 
-
-{% if user.is_authenticated and user == author %}
+<!-- Rendering the Content update header -->
+{% if user.is_authenticated and user.name == author %}
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
@@ -15,7 +15,7 @@
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-           
+           <!-- Rendering the pre-filled content form in a TABLE format -->
             <form method="POST" enctype="multipart/form-data" style="margin-top: 1.3em;">
                 <table>
                 {{ add_content_form | safe }}
@@ -38,7 +38,7 @@
 </div>
 
 {% else %}
-
+<!-- Message informing about an unauthorized editing of the Content  -->
 <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
         <h3>{% trans "This page is ONLY for registered users...& if you are the author of this post" %}</h3>

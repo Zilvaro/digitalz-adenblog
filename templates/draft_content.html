@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<!-- Rendering the Content card according to form data if template==1 & status=='draft' -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3 left">
@@ -44,7 +44,7 @@
                                     </div>
                                 </a>
                             </div>
-
+                            <!-- Showing Edit/Delete buttons if user==author of this Card -->
                             {% if user.is_authenticated and user == content.author %}
                             <small>
                                 <a aria-current="page" href="{% url 'update_content' content.slug %}">
@@ -55,12 +55,12 @@
                                 </a></small>
                             {% endif %}
 
-
+                            <!-- Rendering the Content card according to form data if template!=1 -->
                             {% else %}
                             <div class="card mb-1">
                                 <a href="{% url 'hero_detail' content.slug %}" class="post-link">
                                     <div class="row">
-                                        <div class="col-5 col-md-4"'>
+                                        <div class="col-5 col-md-4">
                                             {% if "placeholder" in content.hero_featured_image.url %}
                                             <img class="rounded float-left img-fluid"
                                                 src="https://res.cloudinary.com/zilvacloud/image/upload/v1661051539/massage-599532_1920_gvgeq7.jpg"

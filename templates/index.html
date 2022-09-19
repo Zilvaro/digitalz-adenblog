@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<!-- Rendering the Content card according to form data if template==1 -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3 left">
@@ -27,6 +28,7 @@
                                         alt="{{ content.image_alt_text }}" /></span>
                                 {% endif %}
                                 <div class="card-img-overlay">
+                                    <!-- Adding the background to the text if image is light -->
                                     {% if content.text_background == 2 %}
                                     <div class="row darker-bg">
                                         <div class="col-12 left">
@@ -44,6 +46,7 @@
                             </a>
                         </div>
 
+                        <!-- Showing Edit/Delete buttons if user==author of this Card -->
                         {% if user.is_authenticated and user == content.author %}
                         <small>
                             <a aria-current="page" href="{% url 'update_content' content.slug %}">
@@ -54,7 +57,7 @@
                             </a></small>
                         {% endif %}
 
-
+                        <!-- Rendering the Content card according to form data if template!=1 -->
                         {% else %}
                         <div class="card mb-1">
                             <a href="{% url 'hero_detail' content.slug %}" class="post-link">
@@ -71,9 +74,7 @@
                                         <span class="d-none d-sm-block">
                                             <img class="rounded float-left card-image"
                                                 src="{{ content.hero_featured_image.url }}"
-                                                alt="{{ content.image_alt_text }}"></span>                                        
-                                        
-                                        
+                                                alt="{{ content.image_alt_text }}"></span>                                          
                                         {% endif %}
                                     </div>
                                     <div class="col-7 col-md-8">
@@ -85,7 +86,7 @@
                                 </div>
                             </a>
                         </div>
-
+                        <!-- Showing Edit/Delete buttons if user==author of this Card -->
                         {% if user.is_authenticated and user == content.author %}
                         <small>
                             <a aria-current="page" href="{% url 'update_content' content.slug %}">
@@ -104,7 +105,7 @@
         </div>
     </div>
 </div>
-
+<!-- Showing Add Content button if user is logged-in -->
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-2 border-bottom">
     {% if user.is_authenticated %}
     <div class="col-md-8 card mb-4 mt-3">
@@ -120,10 +121,7 @@
 </div>
 
 
-
-
-
-
+<!-- Rendering the POST cards on home page -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3 left">
@@ -173,7 +171,7 @@
             </div>
         </div>
     </div>
-
+<!-- Showing Add Content button if user is logged-in -->
     {% if user.is_authenticated %}
     <div class="col-md-8 card mb-4  mt-3 ">
         <a class="nav-link" aria-current="page" href="{% url 'add_post' %}">
@@ -196,7 +194,7 @@
     </nav>
     {% endif %}
 </div>
-
+<!-- Displaying a static image of the company values -->
 <div class="image-container">
     <img class="card-img-top"
         src="https://res.cloudinary.com/zilvacloud/image/upload/v1662905005/our_wellness_approach_green_c5yoep.jpg" alt="image with company values">

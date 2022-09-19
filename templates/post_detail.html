@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 {% load crispy_forms_tags %}
 
-
+<!-- Rendering the Post details page-header -->
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
@@ -83,7 +83,7 @@
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold" name="comments-list">
-                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                        <!-- The commenter's name goes here. -->
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->

@@ -47,14 +47,10 @@ The working version of the Digitals-AdenWell app can be found [here](https://dig
   - [Testing](#testing)
   - [Deployment](#deployment)
     - [Deploying on Heroku](#deploying-on-heroku)
-    - [Forking the Repository](#forking-the-repository)
-    - [Creating a Clone](#creating-a-clone)
   - [Finished Product](#finished-product)
   - [Credits](#credits)
     - [Content](#content)
-    - [Media](#media)
     - [Code](#code)
-  - [Known Bugs](#known-bugs)
   - [Acknowledgements](#acknowledgements)
 
 
@@ -148,20 +144,20 @@ The current webdesign of AdenWellness [here](https://adenwell.com/) was reviewed
 
 * Account registration
 
-* Create, edit and delete content from fron-ent, not only from admin module
+* Create, edit and delete content from fron-end, not only from admin module
 
 * Separate permanent content from the promotional materials and posts
 
 * Ability to interact with users via comments and contact messages
 
-* Ability to create interesting and varied content without other tools (editors, design tools)
+* Ability to create interesting and varied content without using other tools (editors, designer tools)
 
 * No link (at the moment) to external sorces : Amazon, e-commerce, etc.
 
 
-As a outcome - simple sketch of structure was drawn and defined **3 phases** of the software development. 
+As an outcome - simple sketch of structure was drawn and defined **3 phases** of the software development. 
 
-* **!** - content is created by the user either by upload of image or made using CRUD functionality & Summernote directly from the front-end.
+  **!** - content is created by the user either by upload of image or made using CRUD functionality & Summernote directly from the front-end.
 ![Digitalz Aden website map](assets/readme_files/digitalz_aden_wire_flow.jpg)
 ![Digitalz Aden balsamiq - desktop](assets/readme_files/aden-home-balsamiq-desktop.jpg)
 ![Digitalz Aden balsamiq - mobile](assets/readme_files/aden-home-balsamiq-mobile.png)
@@ -170,7 +166,7 @@ As a outcome - simple sketch of structure was drawn and defined **3 phases** of 
 ![Digitalz Aden projects](assets/readme_files/projects-list.JPG)
 
 
-GitHub projects was used as my project management tool to track user stories. Using a Kanban board helped to focus on specific tasks and track the project progress.
+GitHub projects was used as project management tool to track user stories. Using a Kanban board helped to focus on specific tasks and track the project progress.
 
 **Second Phase**
 
@@ -197,7 +193,7 @@ Third phase was to create the full CRUD functionality for 'content' pieces that 
 
 **Fourth Phase**
 
-To make sure most relevant testing is performed, Fourth phase was to create to list the testing and deployment tasks. 
+To make sure most relevant testing is performed, Fourth phase was to create and follow a list of testing and deployment tasks. 
 
 * User Stories testing
 * Manual testing
@@ -208,13 +204,11 @@ To make sure most relevant testing is performed, Fourth phase was to create to l
 
 ![Digitalz Aden testing-project](assets/readme_files/testing-deployment-tasks-project.JPG)
 
-![Digitalz Aden post-project](assets/readme_files/aden-blog-userstories-project.JPG)
-
 
 
 #### Database Models
 
-The database model has been designed and managed using [PostgreSQL](https://www.postgresql.org/).
+The database models have been designed and managed using [PostgreSQL](https://www.postgresql.org/).
 
 1. **POST Model**
 
@@ -261,10 +255,9 @@ The database model has been designed and managed using [PostgreSQL](https://www.
 * created_on = models.DateTimeField()
 * status = models.IntegerField()
 
-!Many of the model fields have a selection option:
+!Many of the model's fields have a selection option:
 
 * STATUS = ((0, "Draft"), (1, "Published"))
-* IMAGECOUNTMOBILE = ((12, "Whole Page"), (6, "2xPage"))
 * IMAGECOUNTDESKTOP = ((12, "Whole Page"), (8, "2/3 of Page"),
                      (6, "Half of Page"), (4, "1/3 of Page"),
                      (3, "1/4 of Page"))
@@ -479,40 +472,6 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
     - Go to Deploy tab on Heroku and connect to the GitHub, then to the required recpository.
     Click on Delpoy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku.
 
-### Forking the Repository
-By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
-
-1. Log into [GitHub](https://github.com/login) or [create an account](https://github.com/join).
-2. Locate the [GitHub Repository](https://github.com/josswe26/digitalz-aden).
-3. At the top of the repository, on the right side of the page, select "Fork"
-4. You should now have a copy of the original repository in your GitHub account.
-
-### Creating a Clone
-How to run this project locally:
-1. Install the [GitPod Browser](https://www.gitpod.io/docs/browser-extension/ "Link to Gitpod Browser extension download") Extension for Chrome.
-2. After installation, restart the browser.
-3. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
-2. Locate the [GitHub Repository](https://github.com/josswe26/digitalz-aden).
-5. Click the green "GitPod" button in the top right corner of the repository.
-This will trigger a new gitPod workspace to be created from the code in github where you can work locally.
-
-How to run this project within a local IDE, such as VSCode:
-
-1. Log into [GitHub](https://github.com/login) or [create an account](https://github.com/join).
-2. Locate the [GitHub Repository](https://github.com/josswe26/digitalz-aden).
-3. Under the repository name, click "Clone or download".
-4. In the Clone with HTTPs section, copy the clone URL for the repository.
-5. In your local IDE open the terminal.
-6. Change the current working directory to the location where you want the cloned directory to be made.
-7. Type 'git clone', and then paste the URL you copied in Step 3.
-```
-git clone https://github.com/josswe26/digitalz-aden
-```
-8. Press Enter. Your local clone will be created.
-
-Further reading and troubleshooting on cloning a repository from GitHub [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
-
-
 
 ## Finished Product
 [Go to the top](#table-of-contents)
@@ -535,17 +494,8 @@ Page | Desktop | Mobile |
 ### Content
 
 * Website content was written by the developer.
-* Example images & some quotes were taken from [Aden Wellness](https://adenwell.com/)-
+* Example images & some quotes were taken from [Aden Wellness](https://adenwell.com/).
 
-### Media
-
-* [Pexels](https://www.pexels.com/)
-
-    * About Page image: Taken by [Buro Millennial](https://www.pexels.com/@buro-millennial-636760/).
-
-* [Unsplash](https://unsplash.com/)
-
-    * 404 Error Page image: Taken by [Tai Bui](https://unsplash.com/@agforl24).
 
 ### Code
 
@@ -554,21 +504,9 @@ Page | Desktop | Mobile |
 * Message implementation an dismissal code is taken from [Code Institute](https://codeinstitute.net/)'s django-blog project.
 
 
-## Known Bugs
-
-* Upvote/downvote button selection stay the same for all users. This do to an error in the logic. Even though the developer has an idea on how to solve the issue. The solution is yet to be implemented due lack of time.
-
-* The same applies for pagination is Search Results page which is currently not working.
-
-* A known issue with Summernote field validation is present in the project. An invalid form will be posted if the field is empty. A message will however be displayed, informing the user that there has been a problem with the submission.
-
-
-
 ## Acknowledgements
 
-* My partner, for her unconditional love, help and continued support in all aspects of life, specially when I did not have time for anything else than to work with this project. You made it possible!
-
-* My friend, Miguel, for being always there to help, no matter what time of the day.
+* For README.md file/Deployment section, reference of github.com/josswe26/code-buddy/ was considered.
 
 * My tutor, Marcel, for his invaluable support, feedback and guidance through the whole process.
 

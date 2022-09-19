@@ -4,12 +4,15 @@ from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
 class CommentForm(forms.ModelForm):
+    """Form for post-comment submission."""
     class Meta:
         model = Comment
         fields = ('body',)
 
 
 class AddPostForm(forms.ModelForm):
+    """Returns the form for adding new Post using POST model. Author and Status
+       fields are hidden fields and prefilled directly into the form."""
     class Meta:
         model = Post
         fields = ('title', 'author', 'posted_by', 'order', 'featured_image',
@@ -18,15 +21,19 @@ class AddPostForm(forms.ModelForm):
             'content': SummernoteWidget(),
             'posted_by': SummernoteWidget(),
             'author': forms.TextInput(attrs={'class': 'form-control',
-                                             'value': '', 'id': 'poster',
+                                             'value': '',
+                                             'id': 'poster',
                                              'type': 'hidden'}),
             'status': forms.TextInput(attrs={'class': 'form-control',
-                                             'value': '', 'id': 'status_id',
+                                             'value': '',
+                                             'id': 'status_id',
                                              'type': 'hidden'}),
         }
 
 
 class AddContentForm(forms.ModelForm):
+    """Returns the form for adding new Content Card using HeroContent model. Author 
+       field is hidden to protect unauthorized input."""
     class Meta:
         model = HeroContent
         fields = ('hero_title', 'author', 'hero_featured_image',
@@ -45,6 +52,7 @@ class AddContentForm(forms.ModelForm):
 
 
 class ContactForm(forms.ModelForm):
+    """Form for contact-message submission."""
     class Meta:
         model = ContactMessage
         fields = ('first_name', 'last_name', 'email', 'contact_message',)

@@ -17,6 +17,7 @@ TEXTBACKGROUND = ((1, "No background"), (2, "Put background"))
 
 
 class Post(models.Model):
+    """Post model to generate posts, check status, creation date and likes"""
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -53,6 +54,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """Model to record the post comments"""
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name="comments")
     name = models.CharField(max_length=80)
@@ -69,6 +71,8 @@ class Comment(models.Model):
 
 
 class HeroContent(models.Model):
+    """Content model to generate content items, including 
+       customized header, size, number on one row, order & card template"""
     hero_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -98,7 +102,6 @@ class HeroContent(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            # the slug is set based on the submitted title
             self.slug = slugify(self.hero_title)
         return super().save(*args, **kwargs)
 
@@ -110,6 +113,7 @@ class HeroContent(models.Model):
 
 
 class ContactMessage(models.Model):
+    """Model to record the Content message"""
     first_name = models.CharField(max_length=80)
     last_name = models.CharField(max_length=80)
     email = models.EmailField()
