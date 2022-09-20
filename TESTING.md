@@ -679,7 +679,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
         <td rowspan=2>Registered</td>
         <td>Functionality</td>
         <td>Clicking the button submit the form and redirects to the home page.<br>Display message if the form submits successfully or not</td>
-        <td><span style="color:red">Fail</span></td>
+        <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
         <td>Style</td>

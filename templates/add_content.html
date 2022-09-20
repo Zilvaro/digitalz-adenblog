@@ -15,6 +15,13 @@
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="text-center alert alert-{{ message.tags }}">
+                {{ message|safe }}
+            </div>
+            {% endfor %}
+            {% else %}
             <form method="POST" enctype="multipart/form-data" style="margin-top: 1.3em;">
                 <table>
                     {{ add_content_form | crispy }}
@@ -25,6 +32,7 @@
                 <br>
                 <button type="submit" class="btn btn-signup btn-lg">Submit</button>
             </form>
+            {% endif %}
             <!-- A JavaScript to place user.id into author field -->
             <script>
                 var name = "{{ user.id }}";

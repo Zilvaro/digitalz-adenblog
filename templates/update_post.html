@@ -15,6 +15,13 @@
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="text-center alert alert-{{ message.tags }}">
+                {{ message|safe }}
+            </div>
+            {% endfor %}
+            {% else %}
             <form method="POST" enctype="multipart/form-data" style="margin-top: 1.3em;">
                 <!-- Rendering the pre-filled Post form in a TABLE format -->
                 <table>
@@ -27,9 +34,10 @@
                 <br>
                 <button type="submit" class="btn btn-signup btn-lg">Update</button>
             </form>
-            <br>               
+            {% endif %}
+            <br>
             <a aria-current="page" href="{% url 'home' %}">
-            <button type="button" class="btn btn-outline-secondary btn-sm">Back to Posts</button></a></small> 
+                <button type="button" class="btn btn-outline-secondary btn-sm">Back to Posts</button></a></small>
             <hr>
         </div>
     </div>

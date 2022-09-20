@@ -10,7 +10,6 @@ class TestAddPostForm(TestCase):
         self.assertIn('name', form.errors.keys())
         self.assertEqual(form.errors['name'], [0], 'This field is required.')
 
-
     def test_content_is_not_required(self):
         form = AddPostForm({'content': ''})
         self.assertTrue(form.is_valid())

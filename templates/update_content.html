@@ -15,7 +15,14 @@
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-           <!-- Rendering the pre-filled content form in a TABLE format -->
+            {% if messages %}
+            {% for message in messages %}
+            <div class="text-center alert alert-{{ message.tags }}">
+                {{ message|safe }}
+            </div>
+            {% endfor %}
+            {% else %}
+            <!-- Rendering the pre-filled content form in a TABLE format -->
             <form method="POST" enctype="multipart/form-data" style="margin-top: 1.3em;">
                 <table>
                 {{ add_content_form | safe }}
@@ -27,7 +34,8 @@
                 <br> 
                 <button type="submit" class="btn btn-signup btn-lg">Update</button>
                 <br>
-            </form> 
+            </form>
+            {% endif %} 
             <br>               
             <a aria-current="page" href="{% url 'home' %}">
             <button type="button" class="btn btn-outline-secondary btn-sm">Back to Content</button></a></small> 

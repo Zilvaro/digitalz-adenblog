@@ -71,7 +71,7 @@ class Comment(models.Model):
 
 
 class HeroContent(models.Model):
-    """Content model to generate content items, including 
+    """Content model to generate content items, including
        customized header, size, number on one row, order & card template"""
     hero_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)

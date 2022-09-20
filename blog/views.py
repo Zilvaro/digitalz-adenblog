@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib.messages.views import SuccessMessageMixin, messages
 from django.urls import reverse_lazy
 from .models import Post, HeroContent, ContactMessage
 from .forms import CommentForm, AddPostForm, ContactForm, AddContentForm
@@ -86,28 +87,32 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class AddPostView(generic.CreateView):
+class AddPostView(SuccessMessageMixin, generic.CreateView):
     """The view that renders the form to add the new Post from the
        front-end."""
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'add_post.html'
     form_class = AddPostForm
+    success_message = "You successfully added a Post."
 
 
-class UpdatePostView(generic.UpdateView):
+class UpdatePostView(SuccessMessageMixin, generic.UpdateView):
     """The view that renders the pre-filled form to edit the Post from
        the front-end."""
     model = Post
     template_name = 'update_post.html'
     form_class = AddPostForm
+    success_message = "Post was updated successfully."
 
-
-class DeletePostView(generic.DeleteView):
+    
+class DeletePostView(SuccessMessageMixin, generic.DeleteView):
     """The view that renders the form to delete a given Post."""
     model = Post
     template_name = 'delete_post.html'
-    success_url = reverse_lazy('home')
+    def get_success_url(self):
+        messages.success(self.request, "Your Post was deleted successfully.") 
+        return reverse_lazy('home')
 
 
 def contact(request):
@@ -122,12 +127,13 @@ def contact(request):
     return render(request, 'contact_form.html', {})
 
 
-class ContactView(generic.CreateView):
+class ContactView(SuccessMessageMixin, generic.CreateView):
     """The view to render the contact form for the registered user to leave
        a message to the admin."""
     model = ContactMessage
     template_name = 'contact_form.html'
     fields = ('first_name', 'last_name', 'email', 'contact_message')
+    success_message = "Thank You for your message!"
 
 
 class HeroContentDetail(generic.DetailView):
@@ -146,28 +152,32 @@ class HeroContentDetail(generic.DetailView):
         )
 
 
-class AddContentView(generic.CreateView):
+class AddContentView(SuccessMessageMixin, generic.CreateView):
     """The view that renders the form to add the new Content
        from the front-end."""
     model = HeroContent
     template_name = 'add_content.html'
     form_class = AddContentForm
+    success_message = "You added a new Content! Bravo!"
 
 
-class UpdateContentView(generic.UpdateView):
+class UpdateContentView(SuccessMessageMixin, generic.UpdateView):
     """The view that renders the pre-filled form to edit the Content card
        from the front-end."""
     model = HeroContent
     template_name = 'update_content.html'
     form_class = AddContentForm
+    success_message = "Content was successfully updated!"
 
 
-class DeleteContentView(generic.DeleteView):
+class DeleteContentView(SuccessMessageMixin, generic.DeleteView):
     """The view that renders the form to delete a given Content."""
     model = HeroContent
     template_name = 'delete_content.html'
     form_class = AddContentForm
-    success_url = reverse_lazy('home')
+    def get_success_url(self):
+        messages.success(self.request, "Content deleted successfully.") 
+        return reverse_lazy('home')
 
 
 class DraftList(generic.TemplateView):
