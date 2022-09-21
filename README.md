@@ -41,10 +41,11 @@ The working version of the Digitals-AdenWell app can be found [here](https://dig
   - [Technologies Used](#technologies-used)
     - [Languages Used](#languages-used)
     - [Libraries and Frameworks](#libraries-and-frameworks)
-    - [Packages / Dependecies Installed](#packages--dependecies-installed)
+    - [Packages / Dependencies Installed](#packages--dependencies-installed)
     - [Database Management](#database-management)
     - [Tools and Programs](#tools-and-programs)
   - [Testing](#testing)
+    - [Major Errors \& Learnings](#major-errors--learnings)
   - [Deployment](#deployment)
     - [Deploying on Heroku](#deploying-on-heroku)
   - [Finished Product](#finished-product)
@@ -144,7 +145,7 @@ The current webdesign of AdenWellness [here](https://adenwell.com/) was reviewed
 
 * Account registration
 
-* Create, edit and delete content from fron-end, not only from admin module
+* Create, edit and delete content from front-end, not only from admin module
 
 * Separate permanent content from the promotional materials and posts
 
@@ -152,7 +153,7 @@ The current webdesign of AdenWellness [here](https://adenwell.com/) was reviewed
 
 * Ability to create interesting and varied content without using other tools (editors, designer tools)
 
-* No link (at the moment) to external sorces : Amazon, e-commerce, etc.
+* No link (at the moment) to external sources : Amazon, e-commerce, etc.
 
 
 As an outcome - simple sketch of structure was drawn and defined **3 phases** of the software development. 
@@ -286,7 +287,7 @@ The database models have been designed and managed using [PostgreSQL](https://ww
 
 The colors used in the website respect the green-golden color-scheme of Aden Wellness, represented in the logo. 
 
-Main colors in the application are achieved through images, so complementary slate-gray (#445261) and baby powder (#FFFFFD) were chosen just to create some contrast, improve readibility and maintain consistent look. 
+Main colors in the application are achieved through images, so complementary slate-grey (#445261) and baby powder (#FFFFFD) were chosen just to create some contrast, improve readability and maintain consistent look. 
 
 
 #### Typography
@@ -363,7 +364,7 @@ Page | Desktop | Mobile |
     * jQuery was used as a JavaScript library to help writing less JavaScript code.  
 
 
-### Packages / Dependecies Installed
+### Packages / Dependencies Installed
 
 * [Django Allauth](https://django-allauth.readthedocs.io/en/latest/)  
     * Django Allauth was used for user authentication, registration, and account management.
@@ -433,9 +434,59 @@ Page | Desktop | Mobile |
 The testing documentation can be found [here](https://github.com/Zilvaro/digitalz-adenblog/blob/main/TESTING.md#digitalz-adenblog-testing).
 
 
+### Major Errors & Learnings
+
+1. Displaying 2 models on the same template. Initially I was trying to implement by creating 2 apps and the include them into index.html. However the result was the rendering the same data twice, depending which one I chose in views.py. 
+After reading different materials I succesfully implemented the Context-View that worked just perfectly:
+
+```
+class PostList(generic.TemplateView):
+    """View to render the list of POSTs on the home page."""
+    template_name = 'index.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['blog_content'] = Post.objects.all()
+        context['hero_content'] = HeroContent.objects.all()
+        return context
+```
+
+2. When Content or Post was created from the frontend, I wanted the slug-field to be created automatically and to use summernote-field for content creation. But the system consistently gave errors, even things looked normal:
+
+![Attribute Error image ](assets/readme_files/attribute-error%20message.jpg)
+
+The solution I learning for other similar instances programming with Classes:
+
+* I added a custom .save() method to the Post model, so that whenever it's saved, it checks to see if there's a slug and if not, generates one using slufigy on the title
+
+```
+def save(self, *args, **kwargs):
+        if not self.slug:            
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
+```
+
+
+* Even I had the Summernote field set up correctly in forms.py, it just wasn't being accessed in the view - instead relying on manually specifying the fields to render. Adding the full form-class into the views.py did the trick:
+
+```
+class AddContentView(SuccessMessageMixin, generic.CreateView):
+    """The view that renders the form to add the new Content
+       from the front-end."""
+    model = HeroContent
+    template_name = 'add_content.html'
+    
+    form_class = AddContentForm
+    
+    success_message = "You added a new Content! Bravo!"
+```
+
+
+
+
 ## Deployment
 
-This project was developed using a [GitPod](https://gitpod.io/) workspace. The code was commited to [Git](https://git-scm.com/) and pushed to [GitHub](https://github.com/") using the terminal.
+This project was developed using a [GitPod](https://gitpod.io/) workspace. The code was committed to [Git](https://git-scm.com/) and pushed to [GitHub](https://github.com/") using the terminal.
 
 ### Deploying on Heroku
 To deploy this page to Heroku from its GitHub repository, the following steps were taken:
@@ -469,8 +520,8 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
     - Create three directories in the main directory; media, storage and templates.
     - Create a file named "Procfile" in the main directory and add the following:
         - web: gunicorn project-name.wsgi
-    - Go to Deploy tab on Heroku and connect to the GitHub, then to the required recpository.
-    Click on Delpoy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku.
+    - Go to Deploy tab on Heroku and connect to the GitHub, then to the required repository.
+    Click on Deploy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku.
 
 
 ## Finished Product

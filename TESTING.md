@@ -14,6 +14,7 @@
 4. [Tools Testing](#tools-testing)
 5. [Manual Testing](#manual-testing)
 6. [Security Testing](#security-testing)
+7. [Automated Testing](#automated-testing)
 
 
 ***
@@ -124,7 +125,7 @@
 * User can edit draft and/or publish it.
 ![User Stories CRUD Draft - edit form](assets/testing_files/10us-draft-as-author-3.jpg)
 
-* User can see the daft being publiched to the app.
+* User can see the daft being published to the app.
 ![User Stories CRUD Draft - published view](assets/testing_files/10us-draft-as-author-4.JPG)
 
 
@@ -141,7 +142,7 @@
 * User selects screen's width portion.               
 ![User Stories content-width - selection](assets/testing_files/12us-content-width-2.JPG)
 
-* User checks if changes makes the content look better
+* User checks if changes make the content look better
 ![User Stories content-width - check](assets/testing_files/12us-content-width-3.JPG)
 
 
@@ -175,13 +176,13 @@
 * User selects template type: with image behind the text or on the side               
 ![User Stories content-template - selection](assets/testing_files/15us-card-template-1.JPG)
 
-* User checks if changes makes the content look better
+* User checks if changes make the content look better
 ![User Stories content-template - check](assets/testing_files/15us-card-template-2.JPG)
 
 
 ### 16. As a **User** I can **create a contact message** so that **I can express my opinion or ask to contact back**
 
-* User selects to oper Contact page from top nav menu.
+* User selects to open Contact page from top nav menu.
 ![User Stories Contact - link](assets/testing_files/16us-contact-1.JPG)
 
 * User writes the message to...                           
@@ -215,7 +216,7 @@ W3C CSS Validator found no errors or warnings on my CSS.
 
 ### Pyhton
 
-Pylint was used continuously during the development process to analyze the Python code for programming errors.
+Pylint was used continuously during the development process to analyse the Python code for programming errors.
 
 [PEP8 online](https://pep8online.com/) was further used to validate the Python code to validate the Python code for PEP8 requirements. See below the validation results and the reviewed results. 
 
@@ -592,7 +593,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
         <td rowspan=2>Title-Header</td>
         <td rowspan=2>All</td>
         <td>Functionality</td>
-        <td>Article-post header is displayed for the slected content-post</td>
+        <td>Article-post header is displayed for the selected content-post</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -985,7 +986,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
         <td rowspan=2>Username input</td>
         <td rowspan=2>All</td>
         <td>Functionality</td>
-        <td>Text can be entered in the field.<br>Field validates input to be present.<br>Display message if the username doesn't exists.</td>
+        <td>Text can be entered in the field.<br>Field validates input to be present.<br>Display message if the username doesn't exist.</td>
         <td><span style="color:green">Pass</span></td>
     </tr>
     <tr>
@@ -1084,7 +1085,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 3. Update/Delete content/post are not accessible via browser if you are not the author.
 
-* System, before the openning Edit or Delete form (from inside the app or from the copied link) for Post or Content - always checks if the user is logged-in && if user is the author.
+* System, before the opening Edit or Delete form (from inside the app or from the copied link) for Post or Content - always checks if the user is logged-in && if user is the author.
 
 * ![Security edit_delete - user logged-in](assets/testing_files/security-status-link-notlogedin.JPG)
 * ![Security edit_delete - user_author](assets/testing_files/security-status-link-logedin.JPG)
@@ -1092,7 +1093,7 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 
 4. Users can update/delete only the posts/content they have created.
 
-* Edit & Delete buttons for the Post or Content are available only if the user is the aiuthor of those Posts and Content.
+* Edit & Delete buttons for the Post or Content are available only if the user is the author of those Posts and Content.
 * As a back-up measure, edit & delete forms will open only after user check (see the description above)
 
 * ![Security edit_button-author](assets/testing_files/security-edit-button-author.JPG)
@@ -1116,3 +1117,76 @@ Nokia 8 | Android 9 |No appearance, responsiveness nor functionality issues. | <
 * ![Security post status - fixed](assets/testing_files/security-status-post-hidden.jpg)
 
 [Go to the top](#table-of-contents)
+
+
+## Automated Testing
+[Go to the top](#table-of-contents)
+
+I have attempted to do some automated testing for forms, models and views. Unfortunatelly, I haven't managed to finish them with a success, however below is the examples of trying.
+
+1. Test_Forms.py 
+
+```
+from django.test import TestCase
+from .forms import AddPostForm
+
+class TestAddPostForm(TestCase):
+
+    def test_post_title_is_required(self):
+        form = AddPostForm({'title': ''})
+        self.assertFalse(form.is_valid())
+        self.assertIn('title', form.errors.keys())
+        self.assertEqual(form.errors['title'], [0], 'This field is required.')
+
+    def test_content_field_is_not_required(self):
+        form = AddPostForm({'content': ''})
+        self.assertTrue(form.is_valid())
+
+    def test_created_on_field_is_not_visible(self):
+        form = AddPostForm()
+        self.assertNotEqual(form.Meta.fields['created_on'])
+```
+   
+Unfortunatelly, the system indicated it can't connect to the database to run it. 
+
+* ![TestForms - error](assets/testing_files/auto-forms-testing-result.JPG)
+
+   
+2. Test_Views.py
+I wanted to test if view is opening Edit Content page:
+```
+from django.test import TestCase
+from .models import HeroContent
+
+class TestViews(TestCase()):
+
+    def test_get_add_content_page(self):
+        response = self.client.get('/add_content')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'add_content.html')
+```
+Unfortunatelly, the system showed many mistakes to figure out the truth:
+
+* ![TestViews - error](assets/testing_files/auto-views-testing-result.JPG)
+
+
+3. Test_Models.py 
+
+```
+from django.test import TestCase
+from .models import Post
+
+
+class TestModels(TestCase()):
+
+    def test_done_defaults_to_false(self):
+        post = Post.objects.create(name='Test Post post')
+        self.assertFalse(post.done)
+```
+   
+Unfortunatelly, the system thought my request is not good enough. 
+
+* ![TestModels - error](assets/testing_files/auto-models-testing-result.JPG)
+
+
+The AutomatedTests remain on the to-do list to learn and execute for the next project.
